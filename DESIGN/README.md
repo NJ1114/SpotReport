@@ -43,7 +43,7 @@ The designed app will have six screens the opening screen, login screen, passcod
 
 ### Opening screen
 
-![Wireframe of the opening screen that has a login, register and language button.](/mobile-application-development-NJ1114/DESIGN/Wireframe/Opening.png)
+![Wireframe of the opening screen that has a login, register and language button.](Wireframe/Opening.png)
 
 This is the opening screen to which the app opens up. The placement of the language button is in the corner as it makes it visible from the beginning to users of the language option, especially as this button will be consistent across all screens. This will allow easy switching to the preferred language. The rounded rectangle buttons were chosen as they enhance the app's modern appearance, but it was also a practical choice as they span to the sides. The slightly rounded corners make the interface feel less intimidating and more friendly for users and it will be a consistent feature of this app's design. Furthermore, this choice was combined with placing it at the bottom of the screen as it takes account of the thumb zone, making it easier to tap.
 
@@ -51,19 +51,19 @@ This is the opening screen to which the app opens up. The placement of the langu
 
 From the opening screen, when the login button is tapped it will take the user to the login screen.
 
-![Wireframe of the login screen that has asks for phone number input, the continue button and language button.](/mobile-application-development-NJ1114/DESIGN/Wireframe/Login.png)
+![Wireframe of the login screen that has asks for phone number input, the continue button and language button.](Wireframe/Login.png)
 
 Following the simple design, it asks for the user to input their phone number in the text box which will have a shaded phone number example that will disappear when a number is inputted and reappear if the box is cleared. The continue button will take the user to the passcode screen whilst also sending an SMS to the inputted phone number.
 
 ### Passcode screen
 
-![Wireframe of the passcode screen with the 6 individual numbers sent by SMS, the resend code link, login button and language button](/mobile-application-development-NJ1114/DESIGN/Wireframe/Passcode.png)
+![Wireframe of the passcode screen with the 6 individual numbers sent by SMS, the resend code link, login button and language button.](Wireframe/Passcode.png)
 
 The passcode screen has six individual boxes for one number of the 6-digit one-time passcode, making it easier to read when inputting. This takes into account for visually impaired users whilst also maintaining a more simple design for users. Likewise, the input boxes match the buttons seen on the previous screens, keeping the design consistent. As observed a resend code link is between the input boxes and login button, in the case a user doesn't receive a code from the previous input of their phone number or the code expired. This link will only resend a code to the user whilst staying on the same page. The login button will transition to the home screen, which is also called the dashboard.
 
 ### Home screen
 
-![Wireframe of the dashboard screen with recent report history, report an issue, a short list of reports in the area and the navigation with 3 options.](/mobile-application-development-NJ1114/DESIGN/Wireframe/Dashboard.png)
+![Wireframe of the dashboard screen with recent report history, report an issue, a short list of reports in the area and the navigation with 3 options.](Wireframe/Dashboard.png)
 
 The home screen is an overview of other screens appearing as the starting page. It utilises boxes to group the sections, presenting a clean design. The first box is the report history, which will display the most recent reports the user has made and their status to keep users up to date. The next box is a shortcut to report an issue, as tapping the type of damage will take the user to the report screen with the type of damage automatically filled in. The utilisation of boxes assists in organising the screen, but the minimal information allows the screen to appear less disorganised.
 
@@ -71,13 +71,13 @@ The navigation bar will be on every screen after login and will contain three ic
 
 ### Reporting screen
 
-![Wireframe of the reporting screen includes a dropdown of the type of damage, location input, add a photo button, input box for additional info, submit button and navigation with 3 options.](/mobile-application-development-NJ1114/DESIGN/Wireframe/Reporting.png)
+![Wireframe of the reporting screen includes a dropdown of the type of damage, location input, add a photo button, input box for additional info, submit button and navigation with 3 options.](Wireframe/Reporting.png)
 
 Pressing the report icon in the navigation bar takes the user to the reporting screen, displaying a simple, uniform design. The element type of damage will utilise a drop-down menu for users to select due to the number of possible types. In damage location, the user will type the address, and it will provide location options similar to map apps. Photo attachment is a button that will ask for access to the user's photos app to provide the required photo or photos of the infrastructure damage. Additional information will be optional but useful for users to fill in, such as personal observations that the photo couldn't capture, especially if it involves motion or movement. The submission button is narrower compared to the elements of this report screen as it assists in differentiating sections of the screen, further seen in the larger spacing between the text box for additional information and the button.
 
 ### Report History screen
 
-![Wireframe of the report history screen with boxes of all the reports and navigation with 3 options.](/mobile-application-development-NJ1114/DESIGN/Wireframe/Report_History.png)
+![Wireframe of the report history screen with boxes of all the reports and navigation with 3 options.](Wireframe/Report_History.png)
 
 The right icon in the navigation bar will take the user to the report history screen. Following the consistent design of the wide boxes, it groups the individual reports providing more information of the previous reports created. This screen will be scrollable, allowing users to view all their previous reports, including completed reports.
 
