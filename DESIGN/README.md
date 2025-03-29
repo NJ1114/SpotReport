@@ -63,7 +63,7 @@ The passcode screen has six individual boxes for one number of the 6-digit one-t
 
 ### Home screen
 
-![Wireframe of the dashboard screen with recent report history, report an issue, a short list of reports in the area and the navigation with 3 options.](Wireframe/Dashboard.png)
+![Wireframe of the dashboard screen with recent report history, report an issue, language button and the navigation with 3 options.](Wireframe/Dashboard.png)
 
 The home screen is an overview of other screens appearing as the starting page. It utilises boxes to group the sections, presenting a clean design. The first box is the report history, which will display the most recent reports the user has made and their status to keep users up to date. The next box is a shortcut to report an issue, as tapping the type of damage will take the user to the report screen with the type of damage automatically filled in. The utilisation of boxes assists in organising the screen, but the minimal information allows the screen to appear less disorganised.
 
@@ -71,13 +71,13 @@ The navigation bar will be on every screen after login and will contain three ic
 
 ### Reporting screen
 
-![Wireframe of the reporting screen includes a dropdown of the type of damage, location input, add a photo button, input box for additional info, submit button and navigation with 3 options.](Wireframe/Reporting.png)
+![Wireframe of the reporting screen includes a dropdown of the type of damage, location input, add a photo button, input box for additional info, submit button, language button and navigation with 3 options.](Wireframe/Reporting.png)
 
 Pressing the report icon in the navigation bar takes the user to the reporting screen, displaying a simple, uniform design. The element type of damage will utilise a drop-down menu for users to select due to the number of possible types. In damage location, the user will type the address, and it will provide location options similar to map apps. Photo attachment is a button that will ask for access to the user's photos app to provide the required photo or photos of the infrastructure damage. Additional information will be optional but useful for users to fill in, such as personal observations that the photo couldn't capture, especially if it involves motion or movement. The submission button is narrower compared to the elements of this report screen as it assists in differentiating sections of the screen, further seen in the larger spacing between the text box for additional information and the button.
 
 ### Report History screen
 
-![Wireframe of the report history screen with boxes of all the reports and navigation with 3 options.](Wireframe/Report_History.png)
+![Wireframe of the report history screen with boxes of all the reports, language button and navigation with 3 options.](Wireframe/Report_History.png)
 
 The right icon in the navigation bar will take the user to the report history screen. Following the consistent design of the wide boxes, it groups the individual reports providing more information of the previous reports created. This screen will be scrollable, allowing users to view all their previous reports, including completed reports.
 
