@@ -38,7 +38,6 @@ class _ReportingScreen extends State<ReportingScreen> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-
             //-- Damage type --
             Text(
               "Type of Damage",
@@ -54,17 +53,47 @@ class _ReportingScreen extends State<ReportingScreen> {
                 fontSize: 18,
               ),
             ),
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFF3B98C6),
+                  ),
+                ),
+              ),
+            ),
 
             //-- Photo --
             Text(
               "Provide a photo of the damage",
               style: TextStyle(fontSize: 18),
             ),
+            FilledButton(
+              onPressed: () {},
+              style: FilledButton.styleFrom(
+                backgroundColor: const Color(0xFF3B98C6),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(3),
+                ),
+              ),
+              child: Text("Add a photo"),
+            ),
 
             //-- Additional info --
             Text(
               "Additional information or comments",
               style: TextStyle(fontSize: 18),
+            ),
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFF3B98C6),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
@@ -74,7 +103,7 @@ class _ReportingScreen extends State<ReportingScreen> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: const Color.fromARGB(255, 59, 152, 198),
+        backgroundColor: const Color(0xFF3B98C6),
         child: Icon(Icons.add),
       ),
       bottomNavigationBar: NavigationBar(
@@ -90,7 +119,7 @@ class _ReportingScreen extends State<ReportingScreen> {
             label: 'Report History',
           ),
         ],
-        indicatorColor: const Color.fromARGB(255, 59, 152, 198),
+        indicatorColor: const Color(0xFF3B98C6),
       ),
     );
   }
