@@ -19,47 +19,53 @@ class UserLoginScreen extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            //--- Email Input ---
-            TextField(
-              decoration: InputDecoration(
-                label: Text(
-                  "Enter your email",
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              //--- Email Input ---
+              TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  label: Text("Enter your email"),
                 ),
               ),
-            ),
-            //--- Password Input ---
-            TextField(
-              decoration: InputDecoration(
-                label: Text("Enter your password"),
+              SizedBox(
+                height: 30,
               ),
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            //--- Login Button ---
-            SizedBox(
-              width: 320,
-              child: ElevatedButton(
-                onPressed: login,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color.fromARGB(255, 59, 152, 198),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+              //--- Password Input ---
+              TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  label: Text("Enter your password"),
+                ),
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              //--- Login Button ---
+              SizedBox(
+                width: 320,
+                child: ElevatedButton(
+                  onPressed: login,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF3B98C6),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: Text(
+                    "Login",
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-                child: Text(
-                  "Login",
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white,
-                  ),
-                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
