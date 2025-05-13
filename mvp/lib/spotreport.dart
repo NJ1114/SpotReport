@@ -31,7 +31,10 @@ class _SpotReport extends State<SpotReport> {
   Widget build(context) {
     return MaterialApp(
       home: Scaffold(
-        body: activeScreen
+        body: Container(
+          color: const Color(0xFFEEF0F2),
+          child: activeScreen,
+        ),
       ),
     );
   }
