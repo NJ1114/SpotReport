@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvp/model/report_model.dart';
 
 class ReportingScreen extends StatefulWidget {
   const ReportingScreen({super.key});
@@ -10,6 +11,9 @@ class ReportingScreen extends StatefulWidget {
 }
 
 class _ReportingScreen extends State<ReportingScreen> {
+  //--- Controllers ---
+  DamageType _chosenType = DamageType.potholes;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,12 +42,40 @@ class _ReportingScreen extends State<ReportingScreen> {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
             //-- Damage type --
             Text(
               "Type of Damage",
               style: TextStyle(
                 fontSize: 18,
               ),
+            ),
+            // DropdownMenu(
+            //   dropdownMenuEntries: DamageType.values
+            //       .map(
+            //         (damage) => DropdownMenuEntry(
+            //           value: damage,
+            //           label: damage.label,
+            //         ),
+            //       )
+            //       .toList(),
+            // ),
+            DropdownButton(
+              items: DamageType.values
+                  .map((damage) => DropdownMenuItem(
+                      value: damage, child: Text(damage.label)))
+                  .toList(),
+              onChanged: (value) {
+                if (value == null) return;
+                setState(
+                  () {
+                    _chosenType = value;
+                  },
+                );
+              },
+              borderRadius: BorderRadius.circular(3),
             ),
 
             //-- Location --
@@ -61,6 +93,7 @@ class _ReportingScreen extends State<ReportingScreen> {
                     color: Color(0xFF3B98C6),
                   ),
                 ),
+                prefixIcon: Icon(Icons.location_on),
               ),
             ),
 
