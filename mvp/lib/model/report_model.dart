@@ -11,7 +11,8 @@ enum DamageType {
   tree('Fallen Tree'),
   fence('Broken Fence'),
   graffiti('Graffiti'),
-  sign('Damaged Sign');
+  sign('Damaged Sign'),
+  other('Other');
 
   const DamageType(this.label);
   final String label;

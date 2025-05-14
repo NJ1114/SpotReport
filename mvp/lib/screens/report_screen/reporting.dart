@@ -27,7 +27,7 @@ class _ReportingScreen extends State<ReportingScreen> {
           ),
         ],
       ),
-      //--- Information ---
+      //--- Reporting Main ---
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Column(
@@ -42,9 +42,11 @@ class _ReportingScreen extends State<ReportingScreen> {
                 fontWeight: FontWeight.bold,
               ),
             ),
+
             SizedBox(
               height: 20,
             ),
+
             //-- Damage type --
             Text(
               "Type of Damage",
@@ -52,17 +54,7 @@ class _ReportingScreen extends State<ReportingScreen> {
                 fontSize: 18,
               ),
             ),
-            // DropdownMenu(
-            //   dropdownMenuEntries: DamageType.values
-            //       .map(
-            //         (damage) => DropdownMenuEntry(
-            //           value: damage,
-            //           label: damage.label,
-            //         ),
-            //       )
-            //       .toList(),
-            // ),
-            DropdownButton(
+            DropdownButtonFormField(
               items: DamageType.values
                   .map((damage) => DropdownMenuItem(
                       value: damage, child: Text(damage.label)))
@@ -75,7 +67,7 @@ class _ReportingScreen extends State<ReportingScreen> {
                   },
                 );
               },
-              borderRadius: BorderRadius.circular(3),
+              decoration: InputDecoration(border: OutlineInputBorder()),
             ),
 
             //-- Location --
@@ -131,6 +123,7 @@ class _ReportingScreen extends State<ReportingScreen> {
           ],
         ),
       ),
+
       //--- Navigation Bar ---
       //-- Reporting --
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
