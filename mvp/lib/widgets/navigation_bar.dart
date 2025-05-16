@@ -15,6 +15,7 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBar extends State<BottomNavBar> {
   final List<Widget> screens = [
     HomeScreen(),
+    ReportingScreen(),
     ReportHistory(),
   ];
   int currentPageIndex = 0;
@@ -23,13 +24,6 @@ class _BottomNavBar extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: screens[currentPageIndex],
-      //-- Reporting --
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: const Color(0xFF3B98C6),
-        child: Icon(Icons.add),
-      ),
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
           setState(() {
@@ -38,12 +32,17 @@ class _BottomNavBar extends State<BottomNavBar> {
         },
         selectedIndex: currentPageIndex,
         destinations: [
-          //-- Home --
+          //--- Home ---
           NavigationDestination(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
-          //-- Report History --
+          //--- Report ---
+          NavigationDestination(
+            icon: Icon(Icons.add),
+            label: 'Report',
+          ),
+          //--- Report History ---
           NavigationDestination(
             icon: Icon(Icons.history),
             label: 'Report History',
