@@ -70,6 +70,8 @@ class _ReportingScreen extends State<ReportingScreen> {
                 );
               },
               decoration: InputDecoration(
+                label: Text('Select'),
+                floatingLabelBehavior: FloatingLabelBehavior.never,
                 border: OutlineInputBorder(),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -88,6 +90,8 @@ class _ReportingScreen extends State<ReportingScreen> {
             ),
             TextField(
               decoration: InputDecoration(
+                label: Text('Enter Location'),
+                floatingLabelBehavior: FloatingLabelBehavior.never,
                 border: OutlineInputBorder(),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -161,8 +165,6 @@ class _ReportingScreen extends State<ReportingScreen> {
           ],
         ),
       ),
-
-      
     );
   }
 }
