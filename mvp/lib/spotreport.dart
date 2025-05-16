@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mvp/screens/login_screens/login.dart';
 import 'package:mvp/screens/report_screen/reporting.dart';
+import 'package:mvp/widgets/navigation_bar.dart';
 
 class SpotReport extends StatefulWidget {
   const SpotReport({super.key});
@@ -12,30 +13,26 @@ class SpotReport extends StatefulWidget {
 }
 
 class _SpotReport extends State<SpotReport> {
-  Widget? activeScreen;
+  bool isLoggedIn = false;
 
-  // to initialise state like a priority
-  @override
-  void initState() {
-    activeScreen = UserLoginScreen(switchScreen);
-    super.initState();
-  }
-
+  //--- Changes state for login process ---
   void switchScreen() {
     setState(() {
-      activeScreen = const ReportingScreen();
+      isLoggedIn = true;
     });
   }
 
   @override
   Widget build(context) {
     return MaterialApp(
-      home: Scaffold(
-        body: Container(
-          color: const Color(0xFFEEF0F2),
-          child: activeScreen,
-        ),
-      ),
+      home: isLoggedIn
+          ? BottomNavBar() // Checks if login is true open to home, if not open to login screen
+          : Scaffold(
+              body: Container(
+                color: const Color(0xFFEEF0F2),
+                child: UserLoginScreen(switchScreen),
+              ),
+            ),
     );
   }
 }

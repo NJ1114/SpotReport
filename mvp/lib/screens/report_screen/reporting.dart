@@ -162,8 +162,7 @@ class _ReportingScreen extends State<ReportingScreen> {
         ),
       ),
 
-      //--- Navigation Bar ---
-      bottomNavigationBar: BottomNavBar(),
+      
     );
   }
 }
