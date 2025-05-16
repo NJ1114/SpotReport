@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mvp/screens/home_screen.dart';
 import 'package:mvp/screens/report_screen/report_history.dart';
+import 'package:mvp/screens/report_screen/reporting.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -12,6 +14,7 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBar extends State<BottomNavBar> {
   final List<Widget> screens = [
+    HomeScreen(),
     ReportHistory(),
   ];
   int currentPageIndex = 0;
