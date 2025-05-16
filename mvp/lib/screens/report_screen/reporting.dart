@@ -111,7 +111,12 @@ class _ReportingScreen extends State<ReportingScreen> {
                   borderRadius: BorderRadius.circular(3),
                 ),
               ),
-              child: Text("Add a photo"),
+              child: Text(
+                "Add a photo",
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
             ),
 
             //-- Additional info --
