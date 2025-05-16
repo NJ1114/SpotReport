@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mvp/model/report_model.dart';
+import 'package:mvp/screens/report_screen/report_history.dart';
+import 'package:mvp/widgets/navigation_bar.dart';
 
 class ReportingScreen extends StatefulWidget {
   const ReportingScreen({super.key});
@@ -67,7 +69,14 @@ class _ReportingScreen extends State<ReportingScreen> {
                   },
                 );
               },
-              decoration: InputDecoration(border: OutlineInputBorder()),
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Color(0xFF3B98C6),
+                  ),
+                ),
+              ),
             ),
 
             //-- Location --
@@ -120,33 +129,36 @@ class _ReportingScreen extends State<ReportingScreen> {
                 ),
               ),
             ),
+
+            SizedBox(
+              height: 60,
+            ),
+
+            //-- Submission button --
+            Center(
+              child: FilledButton(
+                onPressed: () {},
+                style: FilledButton.styleFrom(
+                  backgroundColor: const Color(0xFF3B98C6),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(3),
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                ),
+                child: Text(
+                  'Submit Report',
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
 
       //--- Navigation Bar ---
-      //-- Reporting --
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: const Color(0xFF3B98C6),
-        child: Icon(Icons.add),
-      ),
-      bottomNavigationBar: NavigationBar(
-        destinations: [
-          //-- Home --
-          NavigationDestination(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          //-- Report History --
-          NavigationDestination(
-            icon: Icon(Icons.history),
-            label: 'Report History',
-          ),
-        ],
-        indicatorColor: const Color(0xFF3B98C6),
-      ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }
