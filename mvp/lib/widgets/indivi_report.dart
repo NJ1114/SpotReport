@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mvp/model/report_model.dart';
 
 class IndividualReport extends StatelessWidget {
-  const IndividualReport({super.key, required this.report});
+  const IndividualReport({super.key, required this.eachReport});
 
-  final Report report;
+  final Report eachReport;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class IndividualReport extends StatelessWidget {
             ),
           ),
           Text(
-            'Location; ${report.location}',
+            'Location; ${eachReport.location}',
             style: TextStyle(
               fontSize: 16,
             ),
