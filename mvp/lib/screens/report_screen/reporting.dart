@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mvp/model/report_model.dart';
-import 'package:mvp/screens/report_screen/report_history.dart';
-import 'package:mvp/widgets/navigation_bar.dart';
 
 class ReportingScreen extends StatefulWidget {
   const ReportingScreen({super.key});
@@ -15,6 +13,8 @@ class ReportingScreen extends StatefulWidget {
 class _ReportingScreen extends State<ReportingScreen> {
   //--- Controllers ---
   DamageType _chosenType = DamageType.potholes;
+  final _locationController = TextEditingController();
+  final _commentController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -89,6 +89,7 @@ class _ReportingScreen extends State<ReportingScreen> {
               ),
             ),
             TextField(
+              controller: _locationController,
               decoration: InputDecoration(
                 label: Text('Enter Location'),
                 floatingLabelBehavior: FloatingLabelBehavior.never,
@@ -129,6 +130,7 @@ class _ReportingScreen extends State<ReportingScreen> {
               style: TextStyle(fontSize: 18),
             ),
             TextField(
+              controller: _commentController,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 focusedBorder: OutlineInputBorder(
