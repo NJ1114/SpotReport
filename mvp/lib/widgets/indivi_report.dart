@@ -9,7 +9,10 @@ class IndividualReport extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(20),
+      margin: EdgeInsets.all(15),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(3),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
