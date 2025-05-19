@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:mvp/model/report_model.dart';
+import 'package:mvp/widgets/indivi_report.dart';
+import 'package:mvp/widgets/report_list.dart';
 
 class ReportHistory extends StatelessWidget {
-  const ReportHistory({super.key});
+  ReportHistory({super.key});
+
+  final List<Report> _mySubmissions = [
+    //tester submission
+    Report(
+        damage: DamageType.sign,
+        location: "Epping",
+        info: "Car crashed into the sign"),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +28,13 @@ class ReportHistory extends StatelessWidget {
         ],
       ),
       //--- Report History Main ---
-      body: Text("Report History page"),
+      body: Column(
+        children: [
+          Expanded(
+            child: ReportList(allReports: _mySubmissions),
+          ),
+        ],
+      ),
     );
   }
 }
