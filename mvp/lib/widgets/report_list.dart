@@ -10,6 +10,7 @@ class ReportList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      itemCount: allReports.length,
       itemBuilder: (listContext, index) => IndividualReport(
         eachReport: allReports[index],
       ),
