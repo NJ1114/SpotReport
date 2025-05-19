@@ -29,7 +29,19 @@ class ReportHistory extends StatelessWidget {
       ),
       //--- Report History Main ---
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Text(
+              'Report History',
+              style: TextStyle(
+                color: Color(0xFF353B3C),
+                fontSize: 26,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
           Expanded(
             child: ReportList(allReports: _mySubmissions),
           ),
