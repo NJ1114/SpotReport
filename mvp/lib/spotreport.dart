@@ -30,7 +30,7 @@ class _SpotReport extends State<SpotReport> {
           : Scaffold(
               body: Container(
                 color: const Color(0xFFEEF0F2),
-                child: UserLoginScreen(switchScreen),
+                child: UserLogRegScreen(switchScreen),
               ),
             ),
     );
