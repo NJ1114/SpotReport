@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mvp/model/report_model.dart';
+import 'package:mvp/screens/report_screen/report_history.dart';
 
 class ReportingScreen extends StatefulWidget {
   const ReportingScreen({super.key});
+  // final void Function(Report newReport) addReport;
 
   @override
   State<StatefulWidget> createState() {
@@ -15,6 +17,53 @@ class _ReportingScreen extends State<ReportingScreen> {
   DamageType _chosenType = DamageType.potholes;
   final _locationController = TextEditingController();
   final _commentController = TextEditingController();
+
+  @override
+  void dispose() {
+    _locationController.dispose();
+    _commentController.dispose();
+    super.dispose();
+  }
+
+  //--- Handle saving report ---
+  void saveReport() {
+    //-- Error checking --
+    if (_locationController.text.trim().isEmpty ||
+        _chosenType == null ||
+        _commentController.text.trim().isEmpty) {
+      showDialog(
+        context: context,
+        builder: (dialogContext) => AlertDialog(
+          title: Text("Invalid Submission"),
+          content: Text("Please fill all sections of the report"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(dialogContext);
+              },
+              child: Text("Ok"),
+            ),
+          ],
+        ),
+      );
+      return;
+    }
+    // else {
+    //   widget.addReport(
+    //     Report(
+    //       damage: _chosenType,
+    //       location: _locationController.text,
+    //       info: _commentController.text,
+    //     ),
+    //   );
+    //   Navigator.pushReplacement(
+    //     context,
+    //     MaterialPageRoute(
+    //       builder: (BuildContext context) => ReportHistory(),
+    //     ),
+    //   );
+    // }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -148,7 +197,7 @@ class _ReportingScreen extends State<ReportingScreen> {
             //-- Submission button --
             Center(
               child: FilledButton(
-                onPressed: () {},
+                onPressed: saveReport,
                 style: FilledButton.styleFrom(
                   backgroundColor: const Color(0xFF3B98C6),
                   shape: RoundedRectangleBorder(
