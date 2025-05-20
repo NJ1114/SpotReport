@@ -22,12 +22,16 @@ class UserLoginScreen extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              LoginWidget(),
-            ]
-          ),
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
+            Text(
+              'Login',
+              style: TextStyle(
+                fontSize: 26,
+              ),
+            ),
+            SizedBox(height: 50,),
+            LoginWidget(),
+          ]),
         ),
       ),
     );
