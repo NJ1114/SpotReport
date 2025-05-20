@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mvp/widgets/login_register_widget.dart';
 
 class UserLogRegScreen extends StatelessWidget {
-  const UserLogRegScreen(this.login, {super.key});
-
-  final void Function() login;
+  const UserLogRegScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
