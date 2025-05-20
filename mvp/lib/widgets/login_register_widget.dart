@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginRegisterWidget extends StatefulWidget {
@@ -31,7 +32,22 @@ class _LoginWidget extends State<LoginRegisterWidget> {
   }
 
   //--- Login Handling ---
-  Future<void> handleLogin() async {}
+  Future<void> handleLogin() async {
+    final email = _loginEmailControl.text;
+    final password = _loginPassControl.text;
+
+    print('Login attempt with: $email');
+    try {
+      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+      print(credential);
+    } on FirebaseAuthException catch (e) {
+      if(e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if(e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+      }
+    }
+  }
 
   //--- Register Handling ---
   Future<void> handleRegister() async {}
@@ -125,7 +141,7 @@ class _LoginWidget extends State<LoginRegisterWidget> {
 
         //-- Login button --
         ElevatedButton(
-          onPressed: () {},
+          onPressed: handleLogin,
           style: ElevatedButton.styleFrom(
             backgroundColor: Color(0xFF3B98C6),
             shape: RoundedRectangleBorder(
@@ -217,7 +233,7 @@ class _LoginWidget extends State<LoginRegisterWidget> {
 
         //-- Register button --
         ElevatedButton(
-          onPressed: () {},
+          onPressed: handleRegister,
           style: ElevatedButton.styleFrom(
             backgroundColor: Color(0xFF3B98C6),
             shape: RoundedRectangleBorder(
