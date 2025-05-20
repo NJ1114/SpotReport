@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "925296035017",
+    "project_id": "spotreport-920a5",
+    "storage_bucket": "spotreport-920a5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925296035017:android:e47194191e4ead14e9f918",
+        "android_client_info": {
+          "package_name": "com.spotreport.mvp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCXI8Nub7XBtDnNXxettKkEDVbtGhjaUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
