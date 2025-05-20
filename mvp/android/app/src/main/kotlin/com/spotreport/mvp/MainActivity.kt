@@ -1,4 +1,4 @@
-package com.example.mvp
+package com.spotreport.mvp
 
 import io.flutter.embedding.android.FlutterActivity
 
