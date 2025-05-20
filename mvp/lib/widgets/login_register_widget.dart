@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class LoginRegisterWidget extends StatefulWidget {
@@ -42,26 +41,31 @@ class _LoginWidget extends State<LoginRegisterWidget> {
     //--- Login Design ---
     return Column(
       children: [
+        //-- Display login or register "screen" -> Default Login
         isLoginView ? _buildLogin() : _buildRegister(),
         //-- Link to login or register version --
-
-        Text(isLoginView
-            ? "Don't have an account? "
-            : "Already have an account? "),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // recognizer: TapGestureRecognizer()
-            //   ..onTap = () {
-            //     Navigator.pushReplacement(
-            //       context,
-            //       MaterialPageRoute(
-            //         builder: (BuildContext context) =>
-            //             UserRegisterScreen(),
-            //       ),
-            //     );
-            //   },
+            Text(isLoginView
+                ? "Don't have an account? "
+                : "Already have an account? "),
+            //-- Pressable link --
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  isLoginView = !isLoginView;
+                });
+              },
+              child: Text(
+                isLoginView ? "Register" : "Login",
+                style: TextStyle(
+                  color: Color(0xFF3B98C6),
+                ),
+              ),
+            ),
           ],
-        )
+        ),
       ],
     );
   }
@@ -71,6 +75,19 @@ class _LoginWidget extends State<LoginRegisterWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        //-- Current Status Title --
+        Center(
+          child: Text(
+            "Login",
+            style: TextStyle(
+              fontSize: 26,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 30,
+        ),
+
         //-- Email Input --
         TextField(
           controller: _loginEmailControl,
@@ -103,9 +120,9 @@ class _LoginWidget extends State<LoginRegisterWidget> {
           obscureText: true,
         ),
         SizedBox(
-          height: 70,
+          height: 65,
         ),
-        
+
         //-- Login button --
         ElevatedButton(
           onPressed: () {},
@@ -132,11 +149,24 @@ class _LoginWidget extends State<LoginRegisterWidget> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        //-- Current Status Title --
+        Center(
+          child: Text(
+            "Register",
+            style: TextStyle(
+              fontSize: 26,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 30,
+        ),
+
         //-- Email Input --
         TextField(
           controller: _registerEmailControl,
           decoration: InputDecoration(
-            label: Text("Email"),
+            label: Text("Enter your email"),
             border: OutlineInputBorder(),
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
@@ -182,7 +212,7 @@ class _LoginWidget extends State<LoginRegisterWidget> {
           obscureText: true,
         ),
         SizedBox(
-          height: 70,
+          height: 65,
         ),
 
         //-- Register button --
