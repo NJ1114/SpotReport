@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mvp/screens/login_screens/login_register.dart';
+import 'package:mvp/screens/home_screen.dart';
 import 'package:mvp/screens/report_screen/reporting.dart';
+import 'package:mvp/widgets/login_register_widget.dart';
 import 'package:mvp/widgets/navigation_bar.dart';
 
 class SpotReport extends StatefulWidget {
@@ -24,15 +25,19 @@ class _SpotReport extends State<SpotReport> {
 
   @override
   Widget build(context) {
-    return MaterialApp(
-      home: isLoggedIn
-          ? BottomNavBar() // Checks if login is true open to home, if not open to login screen
-          : Scaffold(
-              body: Container(
-                color: const Color(0xFFEEF0F2),
-                child: UserLogRegScreen(switchScreen),
-              ),
-            ),
+    return Scaffold(
+      //--- Language Button ---
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.language),
+            iconSize: 26,
+          ),
+        ],
+      ),
+      //--- Navigation Bar ---
+      body: BottomNavBar(),
     );
   }
 }

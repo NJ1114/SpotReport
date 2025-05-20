@@ -6,18 +6,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //--- Language button ---
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.language),
-            iconSize: 26,
-          ),
-        ],
-      ),
       //--- Report History Main ---
-      body: Center(child: Text("Home Screen Placeholder")),
+      body: Center(
+        child: Text("Home Screen Placeholder"),
+      ),
     );
   }
 }

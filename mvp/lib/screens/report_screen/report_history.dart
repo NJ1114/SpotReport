@@ -21,16 +21,6 @@ class ReportHistory extends StatelessWidget {
     return Consumer<AppState>(
       builder: (context, state, child) {
         return Scaffold(
-          //--- Language button ---
-          appBar: AppBar(
-            actions: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.language),
-                iconSize: 26,
-              ),
-            ],
-          ),
           //--- Report History Main ---
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

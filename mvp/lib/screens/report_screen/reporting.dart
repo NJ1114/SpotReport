@@ -75,16 +75,6 @@ class _ReportingScreen extends State<ReportingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //--- Language button ---
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.language),
-            iconSize: 26,
-          ),
-        ],
-      ),
       //--- Reporting Main ---
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
