@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mvp/screens/login_screens/login.dart';
+import 'package:mvp/screens/login_screens/login_register.dart';
 import 'package:mvp/screens/report_screen/reporting.dart';
 import 'package:mvp/widgets/navigation_bar.dart';
 
