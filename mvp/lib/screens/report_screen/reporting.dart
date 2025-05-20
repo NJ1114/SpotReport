@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mvp/model/app_state.dart';
 import 'package:mvp/model/report_model.dart';
 import 'package:mvp/screens/report_screen/report_history.dart';
+import 'package:provider/provider.dart';
 
 class ReportingScreen extends StatefulWidget {
   const ReportingScreen({super.key});
@@ -29,7 +31,6 @@ class _ReportingScreen extends State<ReportingScreen> {
   void saveReport() {
     //-- Error checking --
     if (_locationController.text.trim().isEmpty ||
-        _chosenType == null ||
         _commentController.text.trim().isEmpty) {
       showDialog(
         context: context,
@@ -47,22 +48,28 @@ class _ReportingScreen extends State<ReportingScreen> {
         ),
       );
       return;
+    } else {
+      // widget.addReport(
+      //   Report(
+      //     damage: _chosenType,
+      //     location: _locationController.text,
+      //     info: _commentController.text,
+      //   ),
+      // );
+      final report = Report(
+        damage: _chosenType,
+        location: _locationController.text,
+        info: _commentController.text,
+      );
+      Provider.of<AppState>(context, listen: false).add(report);
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => ReportHistory(),
+        ),
+      );
     }
-    // else {
-    //   widget.addReport(
-    //     Report(
-    //       damage: _chosenType,
-    //       location: _locationController.text,
-    //       info: _commentController.text,
-    //     ),
-    //   );
-    //   Navigator.pushReplacement(
-    //     context,
-    //     MaterialPageRoute(
-    //       builder: (BuildContext context) => ReportHistory(),
-    //     ),
-    //   );
-    // }
   }
 
   @override
