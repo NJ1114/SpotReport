@@ -38,19 +38,48 @@ class _LoginWidget extends State<LoginRegisterWidget> {
 
     print('Login attempt with: $email');
     try {
-      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
+      final credential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
       print(credential);
     } on FirebaseAuthException catch (e) {
-      if(e.code == 'user-not-found') {
+      if (e.code == 'user-not-found') {
         print('No user found for that email.');
-      } else if(e.code == 'wrong-password') {
+      } else if (e.code == 'wrong-password') {
         print('Wrong password provided for that user.');
       }
     }
   }
 
   //--- Register Handling ---
-  Future<void> handleRegister() async {}
+  Future<void> handleRegister() async {
+    final email = _registerEmailControl.text;
+    final password = _registerPassControl.text;
+    final confirmPass = _registerConfirmPassControl.text;
+
+    //-- Password Comparison --
+    if (password != confirmPass) {
+      print('Passwords do not match');
+      return;
+    }
+
+    print('Registration attempt with: $email');
+    try {
+      final credential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      print(credential);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        print('The password provided is too weak.');
+      } else if (e.code == 'email-already-in-use') {
+        print('The account already exists for that email.');
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
