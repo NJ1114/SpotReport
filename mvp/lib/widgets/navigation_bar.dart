@@ -18,7 +18,7 @@ class _BottomNavBar extends State<BottomNavBar> {
     ReportingScreen(),
     ReportHistory(),
   ];
-  int currentPageIndex = 0;
+  int currentPageIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class _BottomNavBar extends State<BottomNavBar> {
             label: 'Report History',
           ),
         ],
-        indicatorColor: const Color(0xFF3B98C6),
+        indicatorColor: const Color(0xFF4682B4),
       ),
     );
   }
