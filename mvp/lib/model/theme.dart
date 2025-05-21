@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 
 //--- Colour Palette ---
-const Color steelBlue = Color(0xFF4682B4); //Primary
-const Color ivoryTint = Color(0xFFFAF9F6); //Background
-const Color mistyGrey = Color(0xFFA3ABAF); //Border/outlines
-const Color softOnyx = Color(0xFF464A4C); //Normal text/icons/labels
-const Color mutedAmber = Color(0xFFD8A94F); //Secondary
-const Color softCoral = Color(0xFFE58C85); //Error
+//-- Light --
+const Color steelBlue = Color(0xFF4682B4);  // Primary
+const Color ivoryTint = Color(0xFFFAF9F6);  // Background
+const Color mistyGrey = Color(0xFFA3ABAF);  // Border/outlines
+const Color softOnyx = Color(0xFF464A4C);   // Normal text/icons/labels
+const Color mutedAmber = Color(0xFFD8A94F); // Secondary
+const Color softCoral = Color(0xFFE58C85);  // Error
+
+//-- Dark --
+// Primary same
+const Color deepCharcoal = Color(0xFF1C1C1C);  // Background
+const Color fogGrey = Color(0xFFAAB4B8);  // Border/outlines
+const Color paleGrey = Color(0xFFEAEAEA);   // Normal text/icons/labels
+// Secondary same
+// Error same
 
 //--- Light Colour Scheme ---
 final myLightTheme = ColorScheme(
@@ -19,7 +28,7 @@ final myLightTheme = ColorScheme(
   onError: Colors.white,
   surface: ivoryTint,
   onSurface: softOnyx,
-  surfaceContainerHighest: mistyGrey,
+  surfaceContainerHighest: Color(0xFFEAE9E5), // Dark variation of ivoryTint
   outline: mistyGrey,
   inversePrimary: softOnyx,
   inverseSurface: steelBlue,
@@ -37,7 +46,7 @@ final ThemeData myLightThemeScheme = ThemeData(
 
   //-- Report History Individual Cards --
   cardTheme: CardTheme(
-    color: myLightTheme.surface,
+    color: myLightTheme.surfaceContainerHighest,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(3),
     ),
@@ -80,7 +89,7 @@ final ThemeData myLightThemeScheme = ThemeData(
     focusedBorder: OutlineInputBorder(
       borderSide: BorderSide(color: myLightTheme.primary),
     ),
-    labelStyle: TextStyle(color: myLightTheme.surfaceContainerHighest),
+    labelStyle: TextStyle(color: myLightTheme.outline),
     floatingLabelStyle: TextStyle(color: myLightTheme.primary),
   ),
 
@@ -115,6 +124,107 @@ final ThemeData myLightThemeScheme = ThemeData(
 );
 
 //--- Dark Colour Scheme ---
-// var myDarkTheme = ColorScheme(
+final myDarkTheme = ColorScheme(
+  brightness: Brightness.light,
+  primary: steelBlue,
+  onPrimary: Colors.white,
+  secondary: mutedAmber,
+  onSecondary: Colors.white,
+  error: softCoral,
+  onError: Colors.white,
+  surface: deepCharcoal,
+  onSurface: paleGrey,
+  surfaceContainerHighest: Color(0xFF2A2A2A), // Dark variation of ivoryTint
+  outline: mistyGrey,
+  inversePrimary: paleGrey,
+  inverseSurface: steelBlue,
+);
 
-// );
+final ThemeData myDarkThemeScheme = ThemeData(
+  colorScheme: myDarkTheme,
+  scaffoldBackgroundColor: myDarkTheme.surface,
+
+  //-- Language Button Bar --
+  appBarTheme: AppBarTheme(
+    backgroundColor: myDarkTheme.surface,
+    foregroundColor: myDarkTheme.onSurface,
+  ),
+
+  //-- Report History Individual Cards --
+  cardTheme: CardTheme(
+    color: myDarkTheme.surfaceContainerHighest,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(3),
+    ),
+  ),
+
+  //-- Text Themes --
+  textTheme: TextTheme(
+    //- Screen Headings -
+    headlineMedium: TextStyle(
+      fontWeight: FontWeight.bold,
+      color: myDarkTheme.onSurface,
+    ),
+    //- Sub-Headings -
+    titleMedium: TextStyle(
+      fontSize: 18,
+      color: myDarkTheme.onSurface,
+    ),
+    //- Normal Text -
+    bodyLarge: TextStyle(
+      color: myDarkTheme.onSurface,
+    ),
+    //- Text Links -
+    bodyMedium: TextStyle(
+      color: myDarkTheme.secondary,
+      fontWeight: FontWeight.bold,
+      fontSize: 16,
+    ),
+    //- Button Texts -
+    labelLarge: TextStyle(
+      fontSize: 16,
+      color: myDarkTheme.onPrimary,
+    ),
+  ),
+
+  //-- Form Fields: Reporting, Login, Register --
+  inputDecorationTheme: InputDecorationTheme(
+    border: OutlineInputBorder(
+      borderSide: BorderSide(color: myDarkTheme.outline),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: myDarkTheme.primary),
+    ),
+    labelStyle: TextStyle(color: myDarkTheme.outline),
+    floatingLabelStyle: TextStyle(color: myDarkTheme.primary),
+  ),
+
+  //-- Button Themes --
+  filledButtonTheme: FilledButtonThemeData(
+    style: FilledButton.styleFrom(
+      backgroundColor: myLightTheme.outline,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(3),
+      ),
+    ),
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      backgroundColor: myDarkTheme.primary,
+      foregroundColor: myDarkTheme.onPrimary,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(3),
+      ),
+    ),
+  ),
+
+  //-- Errors
+  dialogTheme: DialogTheme(
+    backgroundColor: myDarkTheme.surface,
+    titleTextStyle: TextStyle(
+      color: myDarkTheme.error,
+      fontSize: 18,
+      // fontWeight: FontWeight.bold,
+    ),
+  ),
+);
