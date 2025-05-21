@@ -6,6 +6,10 @@ class IndividualReport extends StatelessWidget {
 
   final Report eachReport;
 
+  // int reportNums() {
+  //   return
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -19,20 +23,20 @@ class IndividualReport extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Damage Report 1',
+              'Damage Report 1', //Change report number function or method
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
             Text(
-              'Status: ',
+              'Date Reported: ',
               style: TextStyle(
                 fontSize: 16,
               ),
             ),
             Text(
-              'Date Reported: ',
+              'Damage Type: ${eachReport.damage.label}',
               style: TextStyle(
                 fontSize: 16,
               ),
