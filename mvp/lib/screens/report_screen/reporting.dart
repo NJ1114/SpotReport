@@ -49,13 +49,6 @@ class _ReportingScreen extends State<ReportingScreen> {
       );
       return;
     } else {
-      // widget.addReport(
-      //   Report(
-      //     damage: _chosenType,
-      //     location: _locationController.text,
-      //     info: _commentController.text,
-      //   ),
-      // );
       final report = Report(
         damage: _chosenType,
         location: _locationController.text,
@@ -91,9 +84,9 @@ class _ReportingScreen extends State<ReportingScreen> {
               ),
             ),
 
-            SizedBox(
-              height: 20,
-            ),
+            Spacer(
+                // flex: 2,
+                ),
 
             //-- Damage type --
             Text(
@@ -101,6 +94,9 @@ class _ReportingScreen extends State<ReportingScreen> {
               style: TextStyle(
                 fontSize: 18,
               ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             DropdownButtonFormField(
               items: DamageType.values
@@ -127,12 +123,19 @@ class _ReportingScreen extends State<ReportingScreen> {
               ),
             ),
 
+            Spacer(
+                // flex: 2,
+                ),
+
             //-- Location --
             Text(
               "Damage Location",
               style: TextStyle(
                 fontSize: 18,
               ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             TextField(
               controller: _locationController,
@@ -149,15 +152,28 @@ class _ReportingScreen extends State<ReportingScreen> {
               ),
             ),
 
+            Spacer(
+                // flex: 2,
+                ),
+
             //-- Photo --
             Text(
               "Provide a photo of the damage",
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             FilledButton(
               onPressed: () {},
               style: FilledButton.styleFrom(
                 backgroundColor: const Color(0xFF3B98C6),
+                padding: EdgeInsets.symmetric(
+                  vertical: 15,
+                  horizontal: 20,
+                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(3),
                 ),
@@ -170,10 +186,17 @@ class _ReportingScreen extends State<ReportingScreen> {
               ),
             ),
 
+            Spacer(),
+
             //-- Additional info --
             Text(
               "Additional information or comments",
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             TextField(
               controller: _commentController,
@@ -187,8 +210,8 @@ class _ReportingScreen extends State<ReportingScreen> {
               ),
             ),
 
-            SizedBox(
-              height: 60,
+            Spacer(
+              flex: 4,
             ),
 
             //-- Submission button --
@@ -209,6 +232,9 @@ class _ReportingScreen extends State<ReportingScreen> {
                   ),
                 ),
               ),
+            ),
+            Spacer(
+              flex: 5,
             ),
           ],
         ),
