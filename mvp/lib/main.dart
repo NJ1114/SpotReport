@@ -21,8 +21,8 @@ Future<void> main() async {
       child: MaterialApp(
         //--- Light Theme ---
         theme: myLightThemeScheme,
-        
         //--- Dark Theme ---
+        darkTheme: myDarkThemeScheme,
         
         //--- App Functions/Opening ---
         home: StreamBuilder<User?>(
