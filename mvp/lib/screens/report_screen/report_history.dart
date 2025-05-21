@@ -1,20 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mvp/model/app_state.dart';
-import 'package:mvp/model/report_model.dart';
-import 'package:mvp/widgets/indivi_report.dart';
 import 'package:mvp/widgets/report_list.dart';
 import 'package:provider/provider.dart';
 
 class ReportHistory extends StatelessWidget {
-  ReportHistory({super.key});
-
-  // final List<Report> _mySubmissions = [
-  //   //tester submission
-  //   Report(
-  //       damage: DamageType.sign,
-  //       location: "Epping",
-  //       info: "Car crashed into the sign"),
-  // ];
+  const ReportHistory({super.key});
 
   @override
   Widget build(BuildContext context) {
