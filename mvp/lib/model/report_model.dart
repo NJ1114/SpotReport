@@ -1,6 +1,3 @@
-import 'dart:collection';
-
-import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 
 const uuid = Uuid();
@@ -11,7 +8,7 @@ enum DamageType {
   tree('Fallen Tree'),
   fence('Broken Fence'),
   graffiti('Graffiti'),
-  sign('Damaged Sign'),
+  sign('Sign'),
   other('Other');
 
   const DamageType(this.label);
@@ -20,7 +17,7 @@ enum DamageType {
 
 class Report {
   final String id;
-  final Enum damage;
+  final DamageType damage;
   final String location;
   //add photo later
   final String info;
