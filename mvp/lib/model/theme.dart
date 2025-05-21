@@ -1,25 +1,33 @@
 import 'package:flutter/material.dart';
 
+const Color steelBlue = Color(0xFF4682B4);  //Primary
+const Color ivoryTint = Color(0xFFFAF9F6);  //Background
+const Color mistyGrey = Color(0xFFBFC8CC);  //Border/outlines
+const Color softOnyx = Color(0xFF464A4C);   //Normal text/icons/labels
+const Color mutedAmber = Color(0xFFD8A94F); //Secondary
+const Color softCoral = Color(0xFFE58C85);  //Error
+
 final myLightTheme = ColorScheme(
   brightness: Brightness.light,
-  primary: Color(0xFF3B98C6),
-  onPrimary: Color(0xFFEEF0F2),
-  secondary: Color(0xFF846A6A),
-  onSecondary: Color(0xFFFFFFFF),
-  error: Color(0xFFE57373),
-  onError: Color(0xFFFFFFFF),
-  surface: Color(0xFFEEF0F2),
-  onSurface: Color(0xFF8E9193),
+  primary: steelBlue,
+  onPrimary: Colors.white,
+  secondary: mutedAmber,
+  onSecondary: Colors.white,
+  error: softCoral,
+  onError: Colors.white,
+  surface: ivoryTint,
+  onSurface: softOnyx,
+  surfaceContainerHighest: mistyGrey,
+  outline: mistyGrey,
+  inversePrimary: softOnyx,
+  inverseSurface: steelBlue,
 );
 
-final myDarkTheme = ColorScheme(
-  brightness: Brightness.dark,
-  primary: Color(0xFF3B98C6),
-  onPrimary: Color(0xFFEEF0F2),
-  secondary: Color(0xFF846A6A),
-  onSecondary: Color(0xFFFFFFFF),
-  error: Color(0xFFE57373),
-  onError: Color(0xFFFFFFFF),
-  surface: Color(0xFFEEF0F2),
-  onSurface: Color(0xFF8E9193),
+
+
+final ThemeData myLightThemeScheme = ThemeData(
 );
+
+// var myDarkTheme = ColorScheme(
+
+// );
