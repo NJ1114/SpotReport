@@ -173,7 +173,7 @@ class _ReportingScreen extends State<ReportingScreen> {
             TextField(
               controller: _commentController,
               minLines: 4,
-              maxLines: null,
+              maxLines: 4,
             ),
 
             Spacer(
