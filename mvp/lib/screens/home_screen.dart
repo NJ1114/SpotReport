@@ -8,7 +8,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       //--- Report History Main ---
       body: Center(
-        child: Text("Home Screen Placeholder"),
+        child: Text(
+          "Home Screen Placeholder",
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
       ),
     );
   }

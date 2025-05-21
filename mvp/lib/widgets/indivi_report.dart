@@ -24,28 +24,21 @@ class IndividualReport extends StatelessWidget {
           children: [
             Text(
               'Damage Report 1', //Change report number function or method
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             Text(
               'Date Reported: ',
-              style: TextStyle(
-                fontSize: 16,
-              ),
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             Text(
               'Damage Type: ${eachReport.damage.label}',
-              style: TextStyle(
-                fontSize: 16,
-              ),
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             Text(
               'Location: ${eachReport.location}',
-              style: TextStyle(
-                fontSize: 16,
-              ),
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
           ],
         ),

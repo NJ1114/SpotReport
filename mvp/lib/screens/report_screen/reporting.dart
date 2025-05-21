@@ -42,7 +42,7 @@ class _ReportingScreen extends State<ReportingScreen> {
               onPressed: () {
                 Navigator.pop(dialogContext);
               },
-              child: Text("Ok"),
+              child: Text("Close"),
             ),
           ],
         ),
@@ -77,11 +77,7 @@ class _ReportingScreen extends State<ReportingScreen> {
             //-- Title --
             Text(
               "Report Damage",
-              style: TextStyle(
-                color: Color(0xFF353B3C),
-                fontSize: 26,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
 
             Spacer(
@@ -91,9 +87,7 @@ class _ReportingScreen extends State<ReportingScreen> {
             //-- Damage type --
             Text(
               "Type of Damage",
-              style: TextStyle(
-                fontSize: 18,
-              ),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             SizedBox(
               height: 10,
@@ -114,12 +108,6 @@ class _ReportingScreen extends State<ReportingScreen> {
               decoration: InputDecoration(
                 label: Text('Select'),
                 floatingLabelBehavior: FloatingLabelBehavior.never,
-                border: OutlineInputBorder(),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xFF3B98C6),
-                  ),
-                ),
               ),
             ),
 
@@ -130,9 +118,7 @@ class _ReportingScreen extends State<ReportingScreen> {
             //-- Location --
             Text(
               "Damage Location",
-              style: TextStyle(
-                fontSize: 18,
-              ),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             SizedBox(
               height: 10,
@@ -142,12 +128,6 @@ class _ReportingScreen extends State<ReportingScreen> {
               decoration: InputDecoration(
                 label: Text('Enter Location'),
                 floatingLabelBehavior: FloatingLabelBehavior.never,
-                border: OutlineInputBorder(),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xFF3B98C6),
-                  ),
-                ),
                 prefixIcon: Icon(Icons.location_on),
               ),
             ),
@@ -159,9 +139,7 @@ class _ReportingScreen extends State<ReportingScreen> {
             //-- Photo --
             Text(
               "Provide a photo of the damage",
-              style: TextStyle(
-                fontSize: 18,
-              ),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             SizedBox(
               height: 10,
@@ -169,19 +147,15 @@ class _ReportingScreen extends State<ReportingScreen> {
             FilledButton(
               onPressed: () {},
               style: FilledButton.styleFrom(
-                backgroundColor: const Color(0xFF3B98C6),
                 padding: EdgeInsets.symmetric(
                   vertical: 15,
                   horizontal: 20,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(3),
                 ),
               ),
               child: Text(
                 "Add a photo",
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
                 ),
               ),
             ),
@@ -191,23 +165,15 @@ class _ReportingScreen extends State<ReportingScreen> {
             //-- Additional info --
             Text(
               "Additional information or comments",
-              style: TextStyle(
-                fontSize: 18,
-              ),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             SizedBox(
               height: 10,
             ),
             TextField(
               controller: _commentController,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xFF3B98C6),
-                  ),
-                ),
-              ),
+              minLines: 4,
+              maxLines: null,
             ),
 
             Spacer(
@@ -216,19 +182,15 @@ class _ReportingScreen extends State<ReportingScreen> {
 
             //-- Submission button --
             Center(
-              child: FilledButton(
+              child: ElevatedButton(
                 onPressed: saveReport,
-                style: FilledButton.styleFrom(
-                  backgroundColor: const Color(0xFF3B98C6),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(3),
-                  ),
+                style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                 ),
                 child: Text(
                   'Submit Report',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                   ),
                 ),
               ),

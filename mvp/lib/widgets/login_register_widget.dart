@@ -92,9 +92,12 @@ class _LoginWidget extends State<LoginRegisterWidget> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(isLoginView
-                ? "Don't have an account? "
-                : "Already have an account? "),
+            Text(
+              isLoginView
+                  ? "Don't have an account? "
+                  : "Already have an account? ",
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
             //-- Pressable link --
             GestureDetector(
               onTap: () {
@@ -104,9 +107,7 @@ class _LoginWidget extends State<LoginRegisterWidget> {
               },
               child: Text(
                 isLoginView ? "Register" : "Login",
-                style: TextStyle(
-                  color: Color(0xFF3B98C6),
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
           ],
@@ -124,9 +125,7 @@ class _LoginWidget extends State<LoginRegisterWidget> {
         Center(
           child: Text(
             "Login",
-            style: TextStyle(
-              fontSize: 26,
-            ),
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
         SizedBox(
@@ -138,12 +137,6 @@ class _LoginWidget extends State<LoginRegisterWidget> {
           controller: _loginEmailControl,
           decoration: InputDecoration(
             label: Text("Enter your email"),
-            border: OutlineInputBorder(),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Color(0xFF3B98C6),
-              ),
-            ),
           ),
         ),
         SizedBox(
@@ -155,12 +148,6 @@ class _LoginWidget extends State<LoginRegisterWidget> {
           controller: _loginPassControl,
           decoration: InputDecoration(
             label: Text("Enter your password"),
-            border: OutlineInputBorder(),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Color(0xFF3B98C6),
-              ),
-            ),
           ),
           obscureText: true,
         ),
@@ -172,17 +159,13 @@ class _LoginWidget extends State<LoginRegisterWidget> {
         ElevatedButton(
           onPressed: handleLogin,
           style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xFF3B98C6),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
           ),
           child: Text(
             'Login',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.white,
-            ),
+            style: Theme.of(context).textTheme.labelLarge,
           ),
         ),
       ],
@@ -198,9 +181,7 @@ class _LoginWidget extends State<LoginRegisterWidget> {
         Center(
           child: Text(
             "Register",
-            style: TextStyle(
-              fontSize: 26,
-            ),
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
         SizedBox(
@@ -212,12 +193,6 @@ class _LoginWidget extends State<LoginRegisterWidget> {
           controller: _registerEmailControl,
           decoration: InputDecoration(
             label: Text("Enter your email"),
-            border: OutlineInputBorder(),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Color(0xFF3B98C6),
-              ),
-            ),
           ),
         ),
         SizedBox(
@@ -229,12 +204,6 @@ class _LoginWidget extends State<LoginRegisterWidget> {
           controller: _registerPassControl,
           decoration: InputDecoration(
             label: Text("Choose a password"),
-            border: OutlineInputBorder(),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Color(0xFF3B98C6),
-              ),
-            ),
           ),
           obscureText: true,
         ),
@@ -247,12 +216,6 @@ class _LoginWidget extends State<LoginRegisterWidget> {
           controller: _registerConfirmPassControl,
           decoration: InputDecoration(
             label: Text("Confirm password"),
-            border: OutlineInputBorder(),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Color(0xFF3B98C6),
-              ),
-            ),
           ),
           obscureText: true,
         ),
@@ -264,17 +227,13 @@ class _LoginWidget extends State<LoginRegisterWidget> {
         ElevatedButton(
           onPressed: handleRegister,
           style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xFF3B98C6),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
           ),
           child: Text(
             'Register',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.white,
-            ),
+            style: Theme.of(context).textTheme.labelLarge,
           ),
         ),
       ],

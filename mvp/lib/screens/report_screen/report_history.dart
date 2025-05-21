@@ -19,11 +19,7 @@ class ReportHistory extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Text(
                   'Report History',
-                  style: TextStyle(
-                    color: Color(0xFF353B3C),
-                    fontSize: 26,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ),
               Expanded(
