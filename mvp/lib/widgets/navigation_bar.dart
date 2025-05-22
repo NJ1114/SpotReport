@@ -25,6 +25,13 @@ class _BottomNavBar extends State<BottomNavBar> {
     return Scaffold(
       body: screens[currentPageIndex],
       bottomNavigationBar: NavigationBar(
+        //--- Style ---
+        backgroundColor: Theme.of(context).colorScheme.surfaceContainerHighest,
+        indicatorColor: Theme.of(context).colorScheme.primary,
+        elevation: 4,
+        shadowColor: Theme.of(context).colorScheme.surfaceContainerHighest,
+
+        //--- Functions ---
         onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
@@ -32,23 +39,22 @@ class _BottomNavBar extends State<BottomNavBar> {
         },
         selectedIndex: currentPageIndex,
         destinations: [
-          //--- Home ---
+          //-- Home --
           NavigationDestination(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
-          //--- Report ---
+          //-- Report --
           NavigationDestination(
             icon: Icon(Icons.add),
             label: 'Report',
           ),
-          //--- Report History ---
+          //-- Report History --
           NavigationDestination(
             icon: Icon(Icons.history),
             label: 'Report History',
           ),
         ],
-        indicatorColor: const Color(0xFF4682B4),
       ),
     );
   }
