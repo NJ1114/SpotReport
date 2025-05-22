@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mvp/screens/home_screen.dart';
-import 'package:mvp/screens/report_screen/reporting.dart';
-import 'package:mvp/widgets/login_register_widget.dart';
 import 'package:mvp/widgets/navigation_bar.dart';
 
 class SpotReport extends StatefulWidget {
