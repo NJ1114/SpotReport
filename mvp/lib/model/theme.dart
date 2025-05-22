@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 
 //--- Colour Palette ---
 //-- Light --
-const Color steelBlue = Color(0xFF4682B4);  // Primary
-const Color ivoryTint = Color(0xFFFAF9F6);  // Background
-const Color mistyGrey = Color(0xFFA3ABAF);  // Border/outlines
-const Color softOnyx = Color(0xFF464A4C);   // Normal text/icons/labels
+const Color steelBlue = Color(0xFF4682B4); // Primary
+const Color ivoryTint = Color(0xFFFAF9F6); // Background
+const Color mistyGrey = Color(0xFFA3ABAF); // Border/outlines
+const Color softOnyx = Color(0xFF464A4C); // Normal text/icons/labels
 const Color mutedAmber = Color(0xFFD8A94F); // Secondary
-const Color softCoral = Color(0xFFE58C85);  // Error
+const Color softCoral = Color(0xFFD17972); // Error
 
 //-- Dark --
 // Primary same
-const Color deepCharcoal = Color(0xFF1C1C1C);  // Background
-const Color fogGrey = Color(0xFFAAB4B8);  // Border/outlines
-const Color paleGrey = Color(0xFFEAEAEA);   // Normal text/icons/labels
+const Color deepCharcoal = Color(0xFF1C1C1C); // Background
+const Color fogGrey = Color(0xFFAAB4B8); // Border/outlines
+const Color paleGrey = Color(0xFFEAEAEA); // Normal text/icons/labels
 // Secondary same
 // Error same
 
@@ -118,7 +118,11 @@ final ThemeData myLightThemeScheme = ThemeData(
     titleTextStyle: TextStyle(
       color: myLightTheme.error,
       fontSize: 18,
-      // fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.bold,
+    ),
+    contentTextStyle: TextStyle(
+      color: myLightTheme.error,
+      fontSize: 16,
     ),
   ),
 );
@@ -134,7 +138,7 @@ final myDarkTheme = ColorScheme(
   onError: Colors.white,
   surface: deepCharcoal,
   onSurface: paleGrey,
-  surfaceContainerHighest: Color(0xFF2A2A2A), // Dark variation of ivoryTint
+  surfaceContainerHighest: Color(0xFF2A2A2A), // Light variation of deepCharcoal
   outline: mistyGrey,
   inversePrimary: paleGrey,
   inverseSurface: steelBlue,
@@ -224,7 +228,11 @@ final ThemeData myDarkThemeScheme = ThemeData(
     titleTextStyle: TextStyle(
       color: myDarkTheme.error,
       fontSize: 18,
-      // fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.bold,
+    ),
+    contentTextStyle: TextStyle(
+      color: myDarkTheme.error,
+      fontSize: 16,
     ),
   ),
 );
