@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:mvp/model/app_state.dart';
 import 'package:mvp/model/report_model.dart';
 import 'package:mvp/screens/report_screen/report_history.dart';
+import 'package:mvp/widgets/location_services.dart';
 import 'package:provider/provider.dart';
 
 class ReportingScreen extends StatefulWidget {
@@ -65,6 +67,20 @@ class _ReportingScreen extends State<ReportingScreen> {
     }
   }
 
+  Future<void> autofillLocation() async {
+    final locationServices = LocationServices(); // Location service class
+
+    // Getting the coordinates
+    Position? currentCoords = await locationServices.currentLocation();
+
+    // Converting the coordinates to string address
+    String? address = await locationServices.convertCoordsAddress(currentCoords);
+
+    setState(() {
+      _locationController.text = address ?? "Address invalid";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -126,10 +142,12 @@ class _ReportingScreen extends State<ReportingScreen> {
             TextField(
               controller: _locationController,
               decoration: InputDecoration(
-                label: Text('Enter Location'),
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                prefixIcon: Icon(Icons.location_on),
-              ),
+                  label: Text('Enter Location'),
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  prefixIcon: IconButton(
+                    onPressed: autofillLocation,
+                    icon: Icon(Icons.location_on),
+                  )),
             ),
 
             Spacer(
@@ -172,8 +190,8 @@ class _ReportingScreen extends State<ReportingScreen> {
             ),
             TextField(
               controller: _commentController,
-              minLines: 4,
-              maxLines: 4,
+              minLines: 4, // Makes text box size
+              maxLines: 4, // Allows scroll
             ),
 
             Spacer(
