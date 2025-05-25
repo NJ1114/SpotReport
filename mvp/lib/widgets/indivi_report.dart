@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:mvp/model/report_model.dart';
 
 class IndividualReport extends StatelessWidget {
-  const IndividualReport({super.key, required this.eachReport});
+  const IndividualReport({super.key, required this.eachReport, required this.reportTitle});
 
   final Report eachReport;
-
-  // int reportNums() {
-  //   return
-  // }
+  final String reportTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +20,7 @@ class IndividualReport extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Damage Report 1', //Change report number function or method
+              '$reportTitle',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),

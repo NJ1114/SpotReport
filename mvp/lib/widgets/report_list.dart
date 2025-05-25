@@ -11,9 +11,13 @@ class ReportList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: allReports.length,
-      itemBuilder: (listContext, index) => IndividualReport(
-        eachReport: allReports[index],
-      ),
+      itemBuilder: (listContext, index) {
+        final reportNum = 'Damage Report ${index + 1}';
+        return IndividualReport(
+          eachReport: allReports[index],
+          reportTitle: reportNum,
+        );
+      },
     );
   }
 }
