@@ -1,3 +1,4 @@
+import 'package:intl/intl.dart';
 import 'package:uuid/uuid.dart';
 
 const uuid = Uuid();
@@ -14,6 +15,9 @@ enum DamageType {
   const DamageType(this.label);
   final String label;
 }
+
+//--- Date Formatter ---
+final formatter = DateFormat('dd-MM-yyyy');
 
 class Report {
   final String id;
