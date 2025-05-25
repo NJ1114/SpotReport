@@ -5,13 +5,7 @@ import 'package:mvp/model/report_model.dart';
 
 class AppState extends ChangeNotifier {
   //All reports submitted
-  final List<Report> _mySubmissions = [
-    //tester submission
-    Report(
-        damage: DamageType.sign,
-        location: "Epping",
-        info: "Car crashed into the sign"),
-  ];
+  final List<Report> _mySubmissions = [];
 
   //-- Unmodifiable list view of user's submissions
   UnmodifiableListView<Report> get submissions => UnmodifiableListView(_mySubmissions);
