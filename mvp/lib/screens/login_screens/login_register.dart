@@ -8,6 +8,34 @@ class UserLogRegScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        //-- App Logo ---
+        title: RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: "Sp",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
+                  fontSize: 18,
+                ),
+              ),
+              TextSpan(
+                text: "o",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.secondary,
+                  fontSize: 18,
+                ),
+              ),
+              TextSpan(
+                text: "tReport",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
+                  fontSize: 18,
+                ),
+              )
+            ],
+          ),
+        ),
         actions: [
           //--- Language button ---
           IconButton(
