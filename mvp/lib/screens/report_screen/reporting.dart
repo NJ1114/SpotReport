@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:mvp/model/app_state.dart';
@@ -28,8 +30,8 @@ class _ReportingScreen extends State<ReportingScreen> {
     super.dispose();
   }
 
-  //--- Handle saving report ---
-  void saveReport() {
+  //--- Handle Saving Report ---
+  Future<void> saveReport() async {
     //-- Error checking --
     if (_locationController.text.trim().isEmpty ||
         _commentController.text.trim().isEmpty) {
@@ -55,8 +57,44 @@ class _ReportingScreen extends State<ReportingScreen> {
         location: _locationController.text,
         info: _commentController.text,
       );
+
+      //-- Adding to Report List --
       Provider.of<AppState>(context, listen: false).add(report);
 
+      //-- Save New Report to Firebase ---
+      final user =
+          FirebaseAuth.instance.currentUser; // Get current logged-in user
+
+      if (user != null) {
+        await FirebaseFirestore.instance.collection("Reports").add(
+          {
+            "userid": user.uid,
+            "damage": report.damage.label,
+            "location": report.location,
+            "info": report.info,
+            "date": report.reportDate,
+          },
+        );
+      } else {
+        print("Error adding new report");
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text("Not Logged In"),
+            content: Text("You must be logged in to submit a report."),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("Ok"),
+              ),
+            ],
+          ),
+        );
+      }
+
+      //--- Switch to History Screen ---
       if (widget.onSubmission != null) {
         widget.onSubmission!();
       }
