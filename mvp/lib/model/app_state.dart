@@ -33,14 +33,14 @@ class AppState extends ChangeNotifier {
 
         _mySubmissions = reportInfoSnapshot.docs.map((rep) {
           return Report(
-              damage: rep["damage"],
+              damage: DamageType.values.firstWhere((e) => e.label == rep["damage"]),
               location: rep["location"],
               info: rep["info"]);
         }).toList();
 
         notifyListeners();
       } catch (e) {
-        print("Unable to get reports.");
+        print("Unable to get reports: $e");
         return;
       }
     }
