@@ -13,15 +13,26 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBar extends State<BottomNavBar> {
-  final List<Widget> screens = [
-    HomeScreen(),
-    ReportingScreen(),
-    ReportHistory(),
-  ];
-  int currentPageIndex = 1;
+
+  // For report submission screen switch
+  void goToHistoryScreen() {
+    setState(() {
+      currentPageIndex = 2;
+    });
+  }
+
+  int currentPageIndex = 1; // Starting page index - Reporting
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> screens = [
+      HomeScreen(),
+      ReportingScreen(
+        onSubmission: goToHistoryScreen,
+      ),
+      ReportHistory(),
+    ];
+
     return Scaffold(
       body: screens[currentPageIndex],
       bottomNavigationBar: NavigationBar(
