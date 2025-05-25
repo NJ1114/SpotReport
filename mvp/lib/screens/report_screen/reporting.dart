@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:mvp/model/app_state.dart';
 import 'package:mvp/model/report_model.dart';
-import 'package:mvp/screens/report_screen/report_history.dart';
 import 'package:mvp/widgets/location_services.dart';
 import 'package:provider/provider.dart';
 
@@ -136,12 +135,19 @@ class _ReportingScreen extends State<ReportingScreen> {
             TextField(
               controller: _locationController,
               decoration: InputDecoration(
-                  label: Text('Enter Location'),
-                  floatingLabelBehavior: FloatingLabelBehavior.never,
-                  prefixIcon: IconButton(
-                    onPressed: autofillLocation,
-                    icon: Icon(Icons.location_on),
-                  )),
+                label: Text('Enter Location'),
+                floatingLabelBehavior: FloatingLabelBehavior.never,
+                prefixIcon: IconButton(
+                  onPressed: autofillLocation,
+                  icon: Icon(
+                    Icons.location_on,
+                    color: Theme.of(context)
+                        .colorScheme
+                        .secondary
+                        .withValues(alpha: 0.75),
+                  ),
+                ),
+              ),
             ),
 
             Spacer(),
