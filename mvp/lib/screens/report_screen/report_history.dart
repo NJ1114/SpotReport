@@ -3,8 +3,23 @@ import 'package:mvp/model/app_state.dart';
 import 'package:mvp/widgets/report_list.dart';
 import 'package:provider/provider.dart';
 
-class ReportHistory extends StatelessWidget {
+class ReportHistory extends StatefulWidget {
   const ReportHistory({super.key});
+
+  @override
+  State<ReportHistory> createState() => _ReportHistoryState();
+}
+
+class _ReportHistoryState extends State<ReportHistory> {
+  @override
+  void initState() {
+    gettingReports();
+    super.initState();
+  }
+
+  Future<void> gettingReports() async {
+    await Provider.of<AppState>(context, listen: false).getReport();
+  }
 
   @override
   Widget build(BuildContext context) {
