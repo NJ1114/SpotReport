@@ -117,12 +117,19 @@ final ThemeData myLightThemeScheme = ThemeData(
     backgroundColor: myLightTheme.surface,
     titleTextStyle: TextStyle(
       color: myLightTheme.error,
-      fontSize: 18,
-      fontWeight: FontWeight.bold,
+      fontSize: 20,
+      // fontWeight: FontWeight.bold,
     ),
     contentTextStyle: TextStyle(
       color: myLightTheme.error,
       fontSize: 16,
+    ),
+  ),
+  snackBarTheme: SnackBarThemeData(
+    backgroundColor: myLightTheme.error,
+    contentTextStyle: TextStyle(
+      color: myLightTheme.onError,
+      fontSize: 18,
     ),
   ),
 );
@@ -206,7 +213,7 @@ final ThemeData myDarkThemeScheme = ThemeData(
   //-- Button Themes --
   filledButtonTheme: FilledButtonThemeData(
     style: FilledButton.styleFrom(
-      backgroundColor: myLightTheme.outline,
+      backgroundColor: myDarkTheme.outline,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(3),
       ),
@@ -227,12 +234,19 @@ final ThemeData myDarkThemeScheme = ThemeData(
     backgroundColor: myDarkTheme.surface,
     titleTextStyle: TextStyle(
       color: myDarkTheme.error,
-      fontSize: 18,
-      fontWeight: FontWeight.bold,
+      fontSize: 20,
+      // fontWeight: FontWeight.bold,
     ),
     contentTextStyle: TextStyle(
       color: myDarkTheme.error,
       fontSize: 16,
+    ),
+  ),
+  snackBarTheme: SnackBarThemeData(
+    backgroundColor: myDarkTheme.error,
+    contentTextStyle: TextStyle(
+      color: myDarkTheme.onError,
+      fontSize: 18,
     ),
   ),
 );
