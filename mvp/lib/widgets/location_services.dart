@@ -42,7 +42,7 @@ class LocationServices {
       return "${place.street}, ${place.administrativeArea}, ${place.postalCode}, ${place.country}";
     } catch (e) {
       print(e);
+      return null;
     }
-    return null;
   }
 }
