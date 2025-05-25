@@ -7,8 +7,8 @@ import 'package:mvp/widgets/location_services.dart';
 import 'package:provider/provider.dart';
 
 class ReportingScreen extends StatefulWidget {
-  const ReportingScreen({super.key});
-  // final void Function(Report newReport) addReport;
+  const ReportingScreen({super.key, this.onSubmission});
+  final VoidCallback? onSubmission;
 
   @override
   State<StatefulWidget> createState() {
@@ -58,12 +58,9 @@ class _ReportingScreen extends State<ReportingScreen> {
       );
       Provider.of<AppState>(context, listen: false).add(report);
 
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (BuildContext context) => ReportHistory(),
-        ),
-      );
+      if (widget.onSubmission != null) {
+        widget.onSubmission!();
+      }
     }
   }
 
@@ -74,7 +71,8 @@ class _ReportingScreen extends State<ReportingScreen> {
     Position? currentCoords = await locationServices.currentLocation();
 
     // Converting the coordinates to string address
-    String? address = await locationServices.convertCoordsAddress(currentCoords);
+    String? address =
+        await locationServices.convertCoordsAddress(currentCoords);
 
     setState(() {
       _locationController.text = address ?? "Address invalid";
@@ -96,9 +94,7 @@ class _ReportingScreen extends State<ReportingScreen> {
               style: Theme.of(context).textTheme.headlineMedium,
             ),
 
-            Spacer(
-                // flex: 2,
-                ),
+            Spacer(),
 
             //-- Damage type --
             Text(
@@ -127,9 +123,7 @@ class _ReportingScreen extends State<ReportingScreen> {
               ),
             ),
 
-            Spacer(
-                // flex: 2,
-                ),
+            Spacer(),
 
             //-- Location --
             Text(
@@ -150,9 +144,7 @@ class _ReportingScreen extends State<ReportingScreen> {
                   )),
             ),
 
-            Spacer(
-                // flex: 2,
-                ),
+            Spacer(),
 
             //-- Photo --
             Text(
