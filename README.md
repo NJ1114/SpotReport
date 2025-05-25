@@ -31,6 +31,6 @@ While developing SpotReport, three devices were used to test the app: Xcode iOS 
 
 Android simulator did run the few times I tested the app, but it wasn't often as it caused my device to slow down in performance significantly.
 
-Update: Due to plugin and Gradle conflicts, the Android build for the build.gradle.kts file in the root project was unable to be fixed. Reloading, commenting and inputing possible fixes weren't fixing the file and it continued to persist with the same error causing the android to build. However, Web is working to the assignment requirements.
+Update: Due to plugin and Gradle conflicts, the Android build for the build.gradle.kts file in the root project was unable to be fixed. Reloading, commenting and inputing possible fixes weren't fixing the file and it continued to persist with the same error causing the android to not build. However, Web is working to the assignment requirements.
 
 The add a photo button was kept on the reporting screen but due to Firebase storage not being available, saving photos permanently is not possible.
