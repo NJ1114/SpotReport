@@ -6,6 +6,7 @@ import 'package:mvp/model/app_state.dart';
 import 'package:mvp/model/report_model.dart';
 import 'package:mvp/widgets/location_services.dart';
 import 'package:provider/provider.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ReportingScreen extends StatefulWidget {
   const ReportingScreen({super.key, this.onSubmission});
@@ -22,12 +23,23 @@ class _ReportingScreen extends State<ReportingScreen> {
   DamageType _chosenType = DamageType.potholes;
   final _locationController = TextEditingController();
   final _commentController = TextEditingController();
+  XFile? _image;
 
   @override
   void dispose() {
     _locationController.dispose();
     _commentController.dispose();
     super.dispose();
+  }
+
+  void addImage() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? selectedImage =
+        await picker.pickImage(source: ImageSource.gallery);
+
+    setState(() {
+      _image = selectedImage;
+    });
   }
 
   //--- Handle Saving Report ---
@@ -122,137 +134,144 @@ class _ReportingScreen extends State<ReportingScreen> {
       //--- Reporting Main ---
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            //-- Title --
-            Text(
-              "Report Damage",
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-
-            Spacer(),
-
-            //-- Damage type --
-            Text(
-              "Type of Damage",
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            DropdownButtonFormField(
-              items: DamageType.values
-                  .map((damage) => DropdownMenuItem(
-                      value: damage, child: Text(damage.label)))
-                  .toList(),
-              onChanged: (value) {
-                if (value == null) return;
-                setState(
-                  () {
-                    _chosenType = value;
-                  },
-                );
-              },
-              decoration: InputDecoration(
-                label: Text('Select'),
-                floatingLabelBehavior: FloatingLabelBehavior.never,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //-- Title --
+              Text(
+                "Report Damage",
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
-            ),
-
-            Spacer(),
-
-            //-- Location --
-            Text(
-              "Damage Location",
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            TextField(
-              controller: _locationController,
-              decoration: InputDecoration(
-                label: Text('Enter Location'),
-                floatingLabelBehavior: FloatingLabelBehavior.never,
-                prefixIcon: IconButton(
-                  onPressed: autofillLocation,
-                  icon: Icon(
-                    Icons.location_on,
-                    color: Theme.of(context)
-                        .colorScheme
-                        .secondary
-                        .withValues(alpha: 0.75),
+          
+              SizedBox(
+                height: 10,
+              ),
+          
+              //-- Damage type --
+              Text(
+                "Type of Damage",
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              DropdownButtonFormField(
+                items: DamageType.values
+                    .map((damage) => DropdownMenuItem(
+                        value: damage, child: Text(damage.label)))
+                    .toList(),
+                onChanged: (value) {
+                  if (value == null) return;
+                  setState(
+                    () {
+                      _chosenType = value;
+                    },
+                  );
+                },
+                decoration: InputDecoration(
+                  label: Text('Select'),
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                ),
+              ),
+          
+              SizedBox(
+                height: 10,
+              ),
+          
+              //-- Location --
+              Text(
+                "Damage Location",
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              TextField(
+                controller: _locationController,
+                decoration: InputDecoration(
+                  label: Text('Enter Location'),
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  prefixIcon: IconButton(
+                    onPressed: autofillLocation,
+                    icon: Icon(
+                      Icons.location_on,
+                      color: Theme.of(context)
+                          .colorScheme
+                          .secondary
+                          .withValues(alpha: 0.75),
+                    ),
                   ),
                 ),
               ),
-            ),
-
-            Spacer(),
-
-            //-- Photo --
-            Text(
-              "Provide a photo of the damage",
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            FilledButton(
-              onPressed: () {},
-              style: FilledButton.styleFrom(
-                padding: EdgeInsets.symmetric(
-                  vertical: 15,
-                  horizontal: 20,
-                ),
+          
+              SizedBox(
+                height: 10,
               ),
-              child: Text(
-                "Add a photo",
-                style: TextStyle(
-                  fontSize: 14,
-                ),
+          
+              //-- Photo --
+              Text(
+                "Provide a photo of the damage",
+                style: Theme.of(context).textTheme.titleMedium,
               ),
-            ),
-
-            Spacer(),
-
-            //-- Additional info --
-            Text(
-              "Additional information or comments",
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            TextField(
-              controller: _commentController,
-              minLines: 4, // Makes text box size
-              maxLines: 4, // Allows scroll
-            ),
-
-            Spacer(
-              flex: 4,
-            ),
-
-            //-- Submission button --
-            Center(
-              child: ElevatedButton(
-                onPressed: saveReport,
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+              SizedBox(
+                height: 10,
+              ),
+              FilledButton(
+                onPressed: addImage,
+                style: FilledButton.styleFrom(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 15,
+                    horizontal: 20,
+                  ),
                 ),
                 child: Text(
-                  'Submit Report',
+                  "Add a photo",
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                   ),
                 ),
               ),
-            ),
-            Spacer(
-              flex: 5,
-            ),
-          ],
+          
+              SizedBox(
+                height: 10,
+              ),
+          
+              //-- Additional info --
+              Text(
+                "Additional information or comments",
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              TextField(
+                controller: _commentController,
+                minLines: 4, // Makes text box size
+                maxLines: 4, // Allows scroll
+              ),
+          
+              SizedBox(
+                height: 40,
+              ),
+          
+              //-- Submission button --
+              Center(
+                child: ElevatedButton(
+                  onPressed: saveReport,
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  ),
+                  child: Text(
+                    'Submit Report',
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
