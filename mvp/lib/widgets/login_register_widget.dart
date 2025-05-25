@@ -40,12 +40,19 @@ class _LoginWidget extends State<LoginRegisterWidget> {
     try {
       final credential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-      print(credential);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        print('No user found for that email.');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("No user found for that email."),
+          ),
+        );
       } else if (e.code == 'wrong-password') {
-        print('Wrong password provided for that user.');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("The password is incorrect."),
+          ),
+        );
       }
     }
   }
@@ -58,7 +65,11 @@ class _LoginWidget extends State<LoginRegisterWidget> {
 
     //-- Password Comparison --
     if (password != confirmPass) {
-      print('Passwords do not match');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Passwords do not match."),
+        ),
+      );
       return;
     }
 
@@ -72,12 +83,24 @@ class _LoginWidget extends State<LoginRegisterWidget> {
       print(credential);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("The password provided is too weak."),
+          ),
+        );
       } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("The account already exists for that email."),
+          ),
+        );
       }
     } catch (e) {
-      print(e);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Something went wrong. Please try again."),
+        ),
+      );
     }
   }
 
@@ -88,6 +111,7 @@ class _LoginWidget extends State<LoginRegisterWidget> {
       children: [
         //-- Display login or register "screen" -> Default Login
         isLoginView ? _buildLogin() : _buildRegister(),
+
         //-- Link to login or register version --
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
