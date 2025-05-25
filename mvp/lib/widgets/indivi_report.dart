@@ -26,7 +26,7 @@ class IndividualReport extends StatelessWidget {
                   ),
             ),
             Text(
-              'Date Reported: ',
+              'Date Reported: ${eachReport.reportDate}',
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             Text(

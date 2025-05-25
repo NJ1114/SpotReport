@@ -21,10 +21,12 @@ class Report {
   final String location;
   //add photo later
   final String info;
+  final DateTime reportDate;
 
   Report({
     required this.damage,
     required this.location,
     required this.info,
-  }) : id = uuid.v4();
+    DateTime? reportDate,
+  }) : id = uuid.v4(), reportDate = DateTime.now();
 }
