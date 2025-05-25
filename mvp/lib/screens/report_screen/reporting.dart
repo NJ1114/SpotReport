@@ -79,13 +79,13 @@ class _ReportingScreen extends State<ReportingScreen> {
         print("Error adding new report");
         showDialog(
           context: context,
-          builder: (context) => AlertDialog(
+          builder: (dialogContext) => AlertDialog(
             title: Text("Not Logged In"),
             content: Text("You must be logged in to submit a report."),
             actions: [
               TextButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pop(dialogContext);
                 },
                 child: Text("Ok"),
               ),
