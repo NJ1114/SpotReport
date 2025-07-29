@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:mvp/model/app_state.dart';
-import 'package:mvp/model/report_model.dart';
-import 'package:mvp/widgets/location_services.dart';
+import 'package:SpotReport/model/app_state.dart';
+import 'package:SpotReport/model/report_model.dart';
+import 'package:SpotReport/widgets/location_services.dart';
 import 'package:provider/provider.dart';
 import 'package:image_picker/image_picker.dart';
 

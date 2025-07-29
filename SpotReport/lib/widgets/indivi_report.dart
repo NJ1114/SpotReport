@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mvp/model/report_model.dart';
+import 'package:SpotReport/model/report_model.dart';
 
 class IndividualReport extends StatelessWidget {
   const IndividualReport({super.key, required this.eachReport, required this.reportTitle});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mvp/model/report_model.dart';
-import 'package:mvp/widgets/indivi_report.dart';
+import 'package:SpotReport/model/report_model.dart';
+import 'package:SpotReport/widgets/indivi_report.dart';
 
 class ReportList extends StatelessWidget {
   const ReportList({super.key, required this.allReports});

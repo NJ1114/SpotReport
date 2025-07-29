@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mvp/model/app_state.dart';
-import 'package:mvp/model/theme.dart';
-import 'package:mvp/screens/login_screens/login_register.dart';
-import 'package:mvp/spotreport.dart';
+import 'package:SpotReport/model/app_state.dart';
+import 'package:SpotReport/model/theme.dart';
+import 'package:SpotReport/screens/login_screens/login_register.dart';
+import 'package:SpotReport/spotreport.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';

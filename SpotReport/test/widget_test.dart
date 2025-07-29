@@ -8,10 +8,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:mvp/main.dart';
-import 'package:mvp/model/app_state.dart';
-import 'package:mvp/model/report_model.dart';
-import 'package:mvp/spotreport.dart';
+import 'package:SpotReport/model/app_state.dart';
+import 'package:SpotReport/model/report_model.dart';
+import 'package:SpotReport/spotreport.dart';
 import 'package:provider/provider.dart';
 
 void main() {

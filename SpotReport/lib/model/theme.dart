@@ -45,7 +45,7 @@ final ThemeData myLightThemeScheme = ThemeData(
   ),
 
   //-- Report History Individual Cards --
-  cardTheme: CardTheme(
+  cardTheme: CardThemeData(
     color: myLightTheme.surfaceContainerHighest,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(3),
@@ -113,7 +113,7 @@ final ThemeData myLightThemeScheme = ThemeData(
   ),
 
   //-- Errors
-  dialogTheme: DialogTheme(
+  dialogTheme: DialogThemeData(
     backgroundColor: myLightTheme.surface,
     titleTextStyle: TextStyle(
       color: myLightTheme.error,
@@ -162,7 +162,7 @@ final ThemeData myDarkThemeScheme = ThemeData(
   ),
 
   //-- Report History Individual Cards --
-  cardTheme: CardTheme(
+  cardTheme: CardThemeData(
     color: myDarkTheme.surfaceContainerHighest,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(3),
@@ -230,7 +230,7 @@ final ThemeData myDarkThemeScheme = ThemeData(
   ),
 
   //-- Errors
-  dialogTheme: DialogTheme(
+  dialogTheme: DialogThemeData(
     backgroundColor: myDarkTheme.surface,
     titleTextStyle: TextStyle(
       color: myDarkTheme.error,

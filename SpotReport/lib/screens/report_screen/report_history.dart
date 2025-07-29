@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mvp/model/app_state.dart';
-import 'package:mvp/widgets/report_list.dart';
+import 'package:SpotReport/model/app_state.dart';
+import 'package:SpotReport/widgets/report_list.dart';
 import 'package:provider/provider.dart';
 
 class ReportHistory extends StatefulWidget {
