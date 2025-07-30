@@ -13,8 +13,6 @@ The main aim of the app is to report damages, users will have access to the prev
 
 The app helps raise awareness of public infrastracture damages, targeting young to older adults. It benefits the community by highlighting issues that can impact daily activities and present safety risks.
 
-![Reporting page.](misc/SimulatorReport.png)
-
 ## Core Features
 
 - Submit damage reports with:
