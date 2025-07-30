@@ -62,4 +62,5 @@ flutter run
 ## Future Development
 
 - **Social Interaction:** Add a feature to allow users to see other reports from other users in the current viscinity of their device.
-- **Improving photo uplod:** Allow the selected image to be saved instead of a placeholder.
+- **Improving photo upload:** Allow the selected image to be saved instead of a placeholder.
+- **UI/UX Design:** Improve the structure of elements to be more user friendly and logical
