@@ -6,17 +6,33 @@ The app is targeted at young to older adults, benefiting the community by raisin
 
 ## Core Features
 
+- Submit damage reports with:
+  - Category of the damage
+  - Location details using the `geolocator` and `geocoding` package
+  - Descriptions
+  - Upload photos using the `image_picker` package
+- View history of user's previously submitted reports
+- User Authentication via Firebase Authentication
+- Data storage via Firebase Firestore
+
 ## Tech Stack
 
 - **Language:** Dart
 - **Framework:** Flutter
 - **Databases:** Firebase Firestore
 - **Platforms/Services:** Firebase (Authentication & Firestore)
-
+- **Packages:**
+  - `geolocator`
+  - `geocoding`
+  - `image_picker`
+  - `firebase_auth`
+  - `cloud_firestore`
 
 ## Devices Developed For and Tested
 
-While developing SpotReport, three devices were used to test the app: Xcode iOS simulator,  Android simulator and Chrome browser. However, the iOS simulator was utilised the most because the Android simulator had a few issues with device performance.
+- iOS Xcode simulator
+- Android Emulator
+- Chrome Web
 
 ## Installation & Run Locally
 
@@ -37,3 +53,5 @@ flutter run
 ## Usage
 
 ## Future Development
+
+- **Social Interaction:** Add a feature to allow users to see other reports from other users in the current viscinity of their device.
