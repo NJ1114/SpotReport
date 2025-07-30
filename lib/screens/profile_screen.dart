@@ -37,7 +37,13 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: LogoutWidget(),
+      body: Column(
+        children: [
+          Center(
+            child: LogoutWidget(),
+          ),
+        ],
+      ),
     );
   }
 }
