@@ -73,7 +73,7 @@ class _ReportingScreen extends State<ReportingScreen> {
       //-- Adding to Report List --
       Provider.of<AppState>(context, listen: false).add(report);
 
-      //-- Save New Report to Firebase ---
+      //-- Save New Report to Firebase --
       final user =
           FirebaseAuth.instance.currentUser; // Get current logged-in user
 
