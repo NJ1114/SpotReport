@@ -264,3 +264,34 @@ class _LoginWidget extends State<LoginRegisterWidget> {
     );
   }
 }
+
+//--- Logout ---
+class LogoutWidget extends StatelessWidget {
+  const LogoutWidget({super.key});
+
+  //-- Logout Handling --
+  Future<void> handleLogout() async {
+    await FirebaseAuth.instance.signOut();
+  }
+
+  //-- Logout Button --
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ElevatedButton(
+          onPressed: handleLogout,
+          style: ElevatedButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          child: Text(
+            "Logout",
+            style: TextStyle(),
+          ),
+        ),
+      ],
+    );
+  }
+}
