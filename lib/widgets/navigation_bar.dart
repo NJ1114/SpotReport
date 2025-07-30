@@ -21,7 +21,7 @@ class _BottomNavBar extends State<BottomNavBar> {
     });
   }
 
-  int currentPageIndex = 1; // Starting page index - Reporting
+  int currentPageIndex = 0; // Starting page index - Home
 
   @override
   Widget build(BuildContext context) {
