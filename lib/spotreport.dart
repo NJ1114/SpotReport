@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotreport/screens/profile_screen.dart';
 import 'package:spotreport/widgets/navigation_bar.dart';
 
 class SpotReport extends StatefulWidget {
@@ -25,6 +26,11 @@ class _SpotReport extends State<SpotReport> {
     return Scaffold(
       //--- Language Button ---
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.language),
+          iconSize: 26,
+        ),
         //-- App Logo ---
         title: RichText(
           text: TextSpan(
@@ -55,8 +61,15 @@ class _SpotReport extends State<SpotReport> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.language),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ProfileScreen(),
+                ),
+              );
+            },
+            icon: Icon(Icons.person),
             iconSize: 26,
           ),
         ],
