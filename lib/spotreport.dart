@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:SpotReport/widgets/navigation_bar.dart';
+import 'package:spotreport/widgets/navigation_bar.dart';
 
 class SpotReport extends StatefulWidget {
   const SpotReport({super.key});

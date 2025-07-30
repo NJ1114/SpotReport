@@ -3,7 +3,7 @@ import 'dart:collection';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
-import 'package:SpotReport/model/report_model.dart';
+import 'package:spotreport/model/report_model.dart';
 
 class AppState extends ChangeNotifier {
   //--- All reports submitted ---

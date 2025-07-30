@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:SpotReport/screens/home_screen.dart';
-import 'package:SpotReport/screens/report_screen/report_history.dart';
-import 'package:SpotReport/screens/report_screen/reporting.dart';
+import 'package:spotreport/screens/home_screen.dart';
+import 'package:spotreport/screens/report_screen/report_history.dart';
+import 'package:spotreport/screens/report_screen/reporting.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});

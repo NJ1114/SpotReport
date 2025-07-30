@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:SpotReport/widgets/login_register_widget.dart';
+import 'package:spotreport/widgets/login_register_widget.dart';
 
 class UserLogRegScreen extends StatelessWidget {
   const UserLogRegScreen({super.key});
