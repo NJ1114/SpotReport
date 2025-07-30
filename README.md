@@ -1,8 +1,19 @@
 # SpotReport
 
-SpotReport is an app that allows users to report damage detected on public infrastructure.
+SpotReport is a reporting app that focuses on providing users the capability to report damage observed in their community on public infrastructure. The damages that can be reported include but are not limited to this list:
 
-The app is targeted at young to older adults, benefiting the community by raising awareness of damage in the area that may affect them.
+- Potholes
+- Damaged playgrounds
+- Fallen trees
+- Broken fences
+- Graffiti
+- Damaged Signs
+
+The main aim of the app is to report damages, users will have access to the previous reports they've submitted. This allows them to be notified of the progress of the damage and the response in action.
+
+The app helps raise awareness of public infrastracture damages, targeting young to older adults. It benefits the community by highlighting issues that can impact daily activities and present safety risks.
+
+![Reporting page.](misc/SimulatorReport.png)
 
 ## Core Features
 
@@ -50,8 +61,7 @@ flutter pub get
 flutter run
 ```
 
-## Usage
-
 ## Future Development
 
 - **Social Interaction:** Add a feature to allow users to see other reports from other users in the current viscinity of their device.
+- **Improving photo uplod:** Allow the selected image to be saved instead of a placeholder.
