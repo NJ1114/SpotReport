@@ -270,8 +270,9 @@ class LogoutWidget extends StatelessWidget {
   const LogoutWidget({super.key});
 
   //-- Logout Handling --
-  Future<void> handleLogout() async {
+  Future<void> handleLogout(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
+    Navigator.of(context).pop(); //Changes/Logout profile screen back to login
   }
 
   //-- Logout Button --
@@ -280,7 +281,9 @@ class LogoutWidget extends StatelessWidget {
     return Column(
       children: [
         ElevatedButton(
-          onPressed: handleLogout,
+          onPressed: () {
+            handleLogout(context);
+          },
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
