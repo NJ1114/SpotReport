@@ -20,6 +20,48 @@ class _HomeScreen extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //--- Report History Main ---
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          //-- Title --
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Text(
+              "Dashboard",
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+          ),
+          //-- Recent Report History --
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 15,
+              vertical: 30,
+            ),
+            child: SizedBox(
+              width: double.infinity,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(3),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Recent Reports",
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      //- Reports -
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
