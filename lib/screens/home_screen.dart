@@ -11,57 +11,53 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreen extends State<HomeScreen> {
-  Future<void> getRecentReports() async {
-    final allReports =
-        await Provider.of<AppState>(context, listen: false).getReport();
-    // final recentReports = allReports.length > 2
+  @override
+  void initState() {
+    getRecentReports();
+    super.initState();
   }
+
+  Future<void> getRecentReports() async {
+    await Provider.of<AppState>(context, listen: false).getReport();
+  }
+
+  final recent = false;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      //--- Report History Main ---
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          //-- Title --
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: Text(
-              "Dashboard",
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ),
-          //-- Recent Report History --
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 15,
-              vertical: 30,
-            ),
-            child: SizedBox(
-              width: double.infinity,
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(3),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Recent Reports",
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                      //- Reports -
-                    ],
-                  ),
+    return Consumer<AppState>(
+      builder: (context, state, child) {
+        final recents = state.submissions.take(2).toList();
+
+        return Scaffold(
+          //--- Report History Main ---
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //-- Title --
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Text(
+                  "Dashboard",
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
               ),
-            ),
+              //-- Recent Report History --
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 15,
+                  vertical: 30,
+                ),
+                child: recents.isNotEmpty
+                    ? RecentReportList(allReports: recents)
+                    : Card(
+                        child: Text("No recent reports."),
+                      ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      }
     );
   }
 }
