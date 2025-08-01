@@ -20,34 +20,44 @@ class RecentReports extends StatelessWidget {
             //-- Recent Report Heading --
             Text(
               "Recent Reports",
-              style: Theme.of(context).textTheme.titleMedium,
+              style:
+                  Theme.of(context).textTheme.titleMedium!.copyWith(height: 2),
             ),
             //-- Recent Reports Section --
             ...List.generate(
               allReports.length,
               (index) {
                 final report = allReports[index];
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      //- Report Info -
-                      Text(
-                        "Report ${index + 1}",
-                        style: Theme.of(context).textTheme.titleMedium!.copyWith(height: 2),
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    //- Report Info -
+                    Text(
+                      "Report ${index + 1}",
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            height: 2,
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                    Text(
+                      "Date Reported: ${formatter.format(report.reportDate)}",
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge!
+                          .copyWith(height: 2),
+                    ),
+                    Text(
+                      "Status: ",
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodyLarge!
+                          .copyWith(height: 2),
+                    ),
+                    if (index != allReports.length - 1)
+                      const Divider(
+                        height: 40,
                       ),
-                      Text(
-                        "Date Reported: ${formatter.format(report.reportDate)}",
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                      Text(
-                        "Status: ",
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                      if (index != allReports.length - 1) const Divider(),
-                    ],
-                  ),
+                  ],
                 );
               },
             ),
