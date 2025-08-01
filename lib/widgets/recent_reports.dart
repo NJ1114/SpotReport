@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:spotreport/model/report_model.dart';
 
 class RecentReports extends StatelessWidget {
-  const RecentReports(
-      {super.key, required this.eachReport, required this.reportTitle});
+  const RecentReports({super.key, required this.allReports});
 
-  final Report eachReport;
-  final String reportTitle;
+  final List<Report> allReports;
 
   @override
   Widget build(BuildContext context) {
@@ -19,23 +17,39 @@ class RecentReports extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            //-- Recent Report Heading --
             Text(
               "Recent Reports",
               style: Theme.of(context).textTheme.titleMedium,
             ),
-            //- Report Info -
-            Text(
-              reportTitle,
-              style: Theme.of(context).textTheme.titleMedium,
+            //-- Recent Reports Section --
+            ...List.generate(
+              allReports.length,
+              (index) {
+                final report = allReports[index];
+                return Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      //- Report Info -
+                      Text(
+                        "Report ${index + 1}",
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      Text(
+                        "Date Reported: ${formatter.format(report.reportDate)}",
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      Text(
+                        "Status: ",
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      if (index != allReports.length - 1) const Divider(),
+                    ],
+                  ),
+                );
+              },
             ),
-            Text(
-              "Date Reported: ${formatter.format(eachReport.reportDate)}",
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            Text(
-              "Status: ",
-              style: Theme.of(context).textTheme.titleMedium,
-            )
           ],
         ),
       ),
