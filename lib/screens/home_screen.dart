@@ -25,39 +25,82 @@ class _HomeScreen extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<AppState>(
-      builder: (context, state, child) {
-        final recents = state.submissions.take(2).toList();
+    return Consumer<AppState>(builder: (context, state, child) {
+      final recents = state.submissions.take(2).toList(); // Only get 2 reports
 
-        return Scaffold(
-          //--- Report History Main ---
-          body: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              //-- Title --
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Text(
-                  "Dashboard",
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
+      return Scaffold(
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //-- Title --
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Text(
+                "Dashboard",
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
-              //-- Recent Report History --
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 15,
-                  vertical: 30,
-                ),
+            ),
+            //-- Recent Report History --
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 15,
+                vertical: 25,
+              ),
+              child: SizedBox(
+                height: 320,
                 child: recents.isNotEmpty
                     ? RecentReportList(allReports: recents)
-                    : Card(
-                        child: Text("No recent reports."),
+                    :
+                    //- Condition - no reports -
+                    Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(3),
+                        ),
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 15,
+                              vertical: 30,
+                            ),
+                            child: Text(
+                              "No recent reports.",
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                          ),
+                        ),
                       ),
               ),
-            ],
-          ),
-        );
-      }
-    );
+            ),
+            //-- Quick reporting --
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 15,
+                vertical: 5,
+              ),
+              child: SizedBox(
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(3),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 15,
+                      vertical: 30,
+                    ),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Quick Report an Issue",
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+      );
+    });
   }
 }
