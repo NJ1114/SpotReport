@@ -32,5 +32,5 @@ class Report {
     required this.location,
     required this.info,
     DateTime? reportDate,
-  }) : id = uuid.v4(), reportDate = DateTime.now();
+  }) : id = uuid.v4(), reportDate = reportDate ?? DateTime.now();
 }

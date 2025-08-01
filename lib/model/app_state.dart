@@ -35,7 +35,8 @@ class AppState extends ChangeNotifier {
           return Report(
               damage: DamageType.values.firstWhere((e) => e.label == rep["damage"]),
               location: rep["location"],
-              info: rep["info"]);
+              info: rep["info"],
+              reportDate: (rep["date"] as Timestamp).toDate());
         }).toList();
 
         notifyListeners();
