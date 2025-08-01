@@ -28,13 +28,14 @@ class RecentReports extends StatelessWidget {
               (index) {
                 final report = allReports[index];
                 return Padding(
-                  padding: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       //- Report Info -
                       Text(
                         "Report ${index + 1}",
-                        style: Theme.of(context).textTheme.titleMedium,
+                        style: Theme.of(context).textTheme.titleMedium!.copyWith(height: 2),
                       ),
                       Text(
                         "Date Reported: ${formatter.format(report.reportDate)}",
