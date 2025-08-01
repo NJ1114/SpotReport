@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:spotreport/model/report_model.dart';
 import 'package:spotreport/widgets/indivi_report.dart';
+import 'package:spotreport/widgets/recent_reports.dart';
 
 class ReportList extends StatelessWidget {
   const ReportList({super.key, required this.allReports});
@@ -19,5 +20,18 @@ class ReportList extends StatelessWidget {
         );
       },
     );
+  }
+}
+
+class RecentReportList extends StatelessWidget {
+  const RecentReportList({super.key, required this.allReports});
+
+  final List<Report> allReports;
+
+  @override
+  Widget build(BuildContext context) {
+    final recents =
+        allReports.length > 1 ? allReports.sublist(0, 2) : allReports;
+    return RecentReports(allReports: recents);
   }
 }
