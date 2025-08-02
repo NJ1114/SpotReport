@@ -21,13 +21,44 @@ class _SpotReport extends State<SpotReport> {
     });
   }
 
+  Future<void> languagePopUp() async {
+    showDialog(
+      context: context,
+      builder: (popcontext) {
+        return SimpleDialog(
+          title: Text("Select Language"),
+          children: [
+            SimpleDialogOption(
+              onPressed: () {},
+              child: Text("English"),
+            ),
+            SimpleDialogOption(
+              onPressed: () {},
+              child: Text("French"),
+            ),
+            SimpleDialogOption(
+              onPressed: () {},
+              child: Text("Spanish"),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(popcontext);
+              },
+              child: Text("Ok"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(context) {
     return Scaffold(
       //--- Language Button ---
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: languagePopUp,
           icon: Icon(Icons.language),
           iconSize: 26,
         ),
