@@ -37,12 +37,59 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          Center(
-            child: LogoutWidget(),
-          ),
-        ],
+      //-- Settings buttons --
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 25),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            //- User Email -
+            Text(
+              "Email",
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
+            // const Divider(
+            //   height: 1,
+            //   thickness: 0.5,
+            // ),
+            //- Change Password button -
+            SizedBox(
+              width: double.infinity,
+              child: TextButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  padding: EdgeInsets.all(15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  ),
+                ),
+                child: Text("Change Password"),
+              ),
+            ),
+            //- Privacy & security button
+            SizedBox(
+              width: double.infinity,
+              child: TextButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  padding: EdgeInsets.all(15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  ),
+                ),
+                child: Text("Privacy and Security"),
+              ),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            //- Logout button -
+            Center(
+              child: LogoutWidget(),
+            ),
+          ],
+        ),
       ),
     );
   }
