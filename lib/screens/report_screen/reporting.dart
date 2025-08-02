@@ -57,7 +57,11 @@ class _ReportingScreen extends State<ReportingScreen> {
               onPressed: () {
                 Navigator.pop(dialogContext);
               },
-              child: Text("Close", style: TextStyle(color: Theme.of(context).colorScheme.onSurface),),
+              child: Text(
+                "Close",
+                style:
+                    TextStyle(color: Theme.of(context).colorScheme.onSurface),
+              ),
             ),
           ],
         ),
@@ -143,11 +147,11 @@ class _ReportingScreen extends State<ReportingScreen> {
                 "Report Damage",
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
-          
+
               SizedBox(
                 height: 10,
               ),
-          
+
               //-- Damage type --
               Text(
                 "Type of Damage",
@@ -174,11 +178,11 @@ class _ReportingScreen extends State<ReportingScreen> {
                   floatingLabelBehavior: FloatingLabelBehavior.never,
                 ),
               ),
-          
+
               SizedBox(
                 height: 10,
               ),
-          
+
               //-- Location --
               Text(
                 "Damage Location",
@@ -204,11 +208,11 @@ class _ReportingScreen extends State<ReportingScreen> {
                   ),
                 ),
               ),
-          
+
               SizedBox(
                 height: 10,
               ),
-          
+
               //-- Photo --
               Text(
                 "Provide a photo of the damage",
@@ -232,11 +236,11 @@ class _ReportingScreen extends State<ReportingScreen> {
                   ),
                 ),
               ),
-          
+
               SizedBox(
                 height: 10,
               ),
-          
+
               //-- Additional info --
               Text(
                 "Additional information or comments",
@@ -250,11 +254,11 @@ class _ReportingScreen extends State<ReportingScreen> {
                 minLines: 4, // Makes text box size
                 maxLines: 4, // Allows scroll
               ),
-          
+
               SizedBox(
                 height: 40,
               ),
-          
+
               //-- Submission button --
               Center(
                 child: ElevatedButton(
