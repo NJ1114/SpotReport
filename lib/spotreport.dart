@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotreport/screens/profile_screen.dart';
+import 'package:spotreport/screens/settings_screen.dart';
 import 'package:spotreport/widgets/navigation_bar.dart';
 
 class SpotReport extends StatefulWidget {
@@ -117,7 +117,7 @@ class _SpotReport extends State<SpotReport> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const ProfileScreen(),
+                  builder: (context) => const SettingsScreen(),
                 ),
               );
             },
