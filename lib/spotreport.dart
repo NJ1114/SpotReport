@@ -121,7 +121,7 @@ class _SpotReport extends State<SpotReport> {
                 ),
               );
             },
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.settings),
             iconSize: 26,
           ),
         ],
