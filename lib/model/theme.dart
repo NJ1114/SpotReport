@@ -7,7 +7,7 @@ const Color ivoryTint = Color(0xFFFAF9F6); // Background
 const Color mistyGrey = Color(0xFFA3ABAF); // Border/outlines
 const Color softOnyx = Color(0xFF464A4C); // Normal text/icons/labels
 const Color mutedAmber = Color(0xFFD8A94F); // Secondary
-const Color softCoral = Color(0xFFD17972); // Error
+const Color softCoral = Color(0xFFb8655f); // Error
 
 //-- Dark --
 // Primary same
