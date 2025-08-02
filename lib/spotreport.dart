@@ -26,25 +26,46 @@ class _SpotReport extends State<SpotReport> {
       context: context,
       builder: (popcontext) {
         return SimpleDialog(
-          title: Text("Select Language"),
+          title: Text(
+            "Select Language",
+            style: TextStyle(color: Theme.of(context).colorScheme.onSurface),
+          ),
           children: [
             SimpleDialogOption(
               onPressed: () {},
-              child: Text("English"),
+              child: Text(
+                "English",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
             ),
             SimpleDialogOption(
               onPressed: () {},
-              child: Text("French"),
+              child: Text(
+                "French",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
             ),
             SimpleDialogOption(
               onPressed: () {},
-              child: Text("Spanish"),
+              child: Text(
+                "Spanish",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
             ),
             TextButton(
               onPressed: () {
                 Navigator.pop(popcontext);
               },
-              child: Text("Ok"),
+              child: Text("OK"),
             ),
           ],
         );
