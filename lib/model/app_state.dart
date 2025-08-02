@@ -9,9 +9,15 @@ class AppState extends ChangeNotifier {
   //--- All reports submitted ---
   List<Report> _mySubmissions = [];
 
+  //--- User email ---
+  String? _userEmail;
+
   //--- Unmodifiable list view of user's submissions ---
   UnmodifiableListView<Report> get submissions =>
       UnmodifiableListView(_mySubmissions);
+
+  //--- Get user email ---
+  String? get userEmail => _userEmail;
 
   //--- Add report to full list ---
   void add(Report report) {
@@ -33,7 +39,8 @@ class AppState extends ChangeNotifier {
 
         _mySubmissions = reportInfoSnapshot.docs.map((rep) {
           return Report(
-              damage: DamageType.values.firstWhere((e) => e.label == rep["damage"]),
+              damage:
+                  DamageType.values.firstWhere((e) => e.label == rep["damage"]),
               location: rep["location"],
               info: rep["info"],
               reportDate: (rep["date"] as Timestamp).toDate());
@@ -46,5 +53,15 @@ class AppState extends ChangeNotifier {
       }
     }
     return;
+  }
+
+  //--- Get user email ---
+  Future<void> getUserEmail() async {
+    final user = FirebaseAuth.instance.currentUser;
+
+    if (user != null) {
+      _userEmail = user.email;
+    }
+    notifyListeners();
   }
 }
