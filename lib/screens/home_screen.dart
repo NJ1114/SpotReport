@@ -21,8 +21,6 @@ class _HomeScreen extends State<HomeScreen> {
     await Provider.of<AppState>(context, listen: false).getReport();
   }
 
-  final recent = false;
-
   @override
   Widget build(BuildContext context) {
     return Consumer<AppState>(builder: (context, state, child) {
