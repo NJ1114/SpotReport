@@ -288,6 +288,7 @@ class LogoutWidget extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
+            backgroundColor: Theme.of(context).colorScheme.error,
           ),
           child: Text(
             "Logout",
