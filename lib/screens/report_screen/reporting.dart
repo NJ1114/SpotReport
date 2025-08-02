@@ -57,7 +57,7 @@ class _ReportingScreen extends State<ReportingScreen> {
               onPressed: () {
                 Navigator.pop(dialogContext);
               },
-              child: Text("Close"),
+              child: Text("Close", style: TextStyle(color: Theme.of(context).colorScheme.onSurface),),
             ),
           ],
         ),
