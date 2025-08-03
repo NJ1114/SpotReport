@@ -79,17 +79,15 @@ class _SettingsScreen extends State<SettingsScreen> {
                   ColoredBox(
                     color: Theme.of(context).colorScheme.surfaceContainerHighest,
                     child: SizedBox(
-                      height: 50,
-                      child: Text("${state.userEmail}",
-                        style: Theme.of(context).textTheme.bodyLarge,
-                        textAlign: TextAlign.center,
+                      height: 60,
+                      child: Center(
+                        child: Text("${state.userEmail}",
+                          style: Theme.of(context).textTheme.bodyLarge,
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
                   ),
-                  // const Divider(
-                  //   height: 50,
-                  //   thickness: 0.5,
-                  // ),
                   // - Change Password button -
                   SizedBox(
                     width: double.infinity,
