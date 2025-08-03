@@ -30,7 +30,7 @@ class _SettingsScreen extends State<SettingsScreen> {
       builder: (context, state, child) {
         return Scaffold(
           appBar: AppBar(
-            //-- App Logo ---
+            //--- App Logo ---
             title: RichText(
               text: TextSpan(
                 children: [
@@ -59,7 +59,7 @@ class _SettingsScreen extends State<SettingsScreen> {
               ),
             ),
           ),
-          //-- Settings buttons --
+          //--- Settings Main ---
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -68,6 +68,7 @@ class _SettingsScreen extends State<SettingsScreen> {
                   horizontal: 25.0,
                   vertical: 15,
                 ),
+                //-- Title --
                 child: Text(
                   "Settings",
                   style: Theme.of(context).textTheme.headlineMedium,
@@ -76,7 +77,7 @@ class _SettingsScreen extends State<SettingsScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  //- User Email -
+                  //-- User Email --
                   ColoredBox(
                     color:
                         Theme.of(context).colorScheme.surfaceContainerHighest,
@@ -91,7 +92,7 @@ class _SettingsScreen extends State<SettingsScreen> {
                       ),
                     ),
                   ),
-                  // - Change Password button -
+                  //-- Change Password button --
                   SizedBox(
                     width: double.infinity,
                     child: TextButton.icon(
@@ -119,7 +120,7 @@ class _SettingsScreen extends State<SettingsScreen> {
                           alignment: Alignment.centerLeft),
                     ),
                   ),
-                  //- Notifications
+                  //-- Notifications --
                   SizedBox(
                     width: double.infinity,
                     child: TextButton.icon(
@@ -140,7 +141,7 @@ class _SettingsScreen extends State<SettingsScreen> {
                           alignment: Alignment.centerLeft),
                     ),
                   ),
-                  //- Privacy & security button -
+                  //-- Privacy & security button --
                   SizedBox(
                     width: double.infinity,
                     child: TextButton.icon(
@@ -164,7 +165,7 @@ class _SettingsScreen extends State<SettingsScreen> {
                   SizedBox(
                     height: 40,
                   ),
-                  //- Logout button -
+                  //-- Logout button --
                   Center(
                     child: LogoutWidget(),
                   ),

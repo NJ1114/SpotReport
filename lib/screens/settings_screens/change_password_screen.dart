@@ -12,7 +12,7 @@ class _ChangePassword extends State<ChangePassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //-- App Logo ---
+        //--- App Logo ---
         title: RichText(
           text: TextSpan(
             children: [
@@ -41,7 +41,7 @@ class _ChangePassword extends State<ChangePassword> {
           ),
         ),
       ),
-      //-- Main password textfields --
+      //--- Change Password Main ---
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -50,6 +50,7 @@ class _ChangePassword extends State<ChangePassword> {
               horizontal: 25.0,
               vertical: 15.0,
             ),
+            //-- Title --
             child: Text(
               "Change Password",
               style: Theme.of(context).textTheme.headlineMedium,

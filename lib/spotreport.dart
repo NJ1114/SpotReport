@@ -76,7 +76,7 @@ class _SpotReport extends State<SpotReport> {
   @override
   Widget build(context) {
     return Scaffold(
-      //--- Language Button ---
+      //-- Language Button --
       appBar: AppBar(
         leading: IconButton(
           onPressed: languagePopUp,
@@ -111,6 +111,7 @@ class _SpotReport extends State<SpotReport> {
             ],
           ),
         ),
+        //-- Settings Button --
         actions: [
           IconButton(
             onPressed: () {
