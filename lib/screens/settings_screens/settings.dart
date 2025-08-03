@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:spotreport/model/app_state.dart';
+import 'package:spotreport/screens/settings_screens/change_password_screen.dart';
 import 'package:spotreport/widgets/login_register_widget.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -94,7 +95,14 @@ class _SettingsScreen extends State<SettingsScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: TextButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ChangePassword(),
+                          ),
+                        );
+                      },
                       icon: Icon(
                         Icons.person,
                         size: 26,
