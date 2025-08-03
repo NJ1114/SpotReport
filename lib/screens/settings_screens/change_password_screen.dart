@@ -42,21 +42,28 @@ class _ChangePassword extends State<ChangePassword> {
         ),
       ),
       //--- Change Password Main ---
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 25.0,
-              vertical: 15.0,
-            ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 25.0,
+          vertical: 15.0,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
             //-- Title --
-            child: Text(
+            Text(
               "Change Password",
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-          ),
-        ],
+
+            //-- Current Password --
+
+
+            //-- New Password --
+
+            //-- Confirm New Password --
+          ],
+        ),
       ),
     );
   }
