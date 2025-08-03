@@ -77,12 +77,14 @@ class _SettingsScreen extends State<SettingsScreen> {
                 children: [
                   //- User Email -
                   ColoredBox(
-                    color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                    color:
+                        Theme.of(context).colorScheme.surfaceContainerHighest,
                     child: SizedBox(
-                      height: 60,
+                      height: 70,
                       child: Center(
-                        child: Text("${state.userEmail}",
-                          style: Theme.of(context).textTheme.bodyLarge,
+                        child: Text(
+                          "${state.userEmail}",
+                          style: Theme.of(context).textTheme.titleMedium,
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -93,8 +95,14 @@ class _SettingsScreen extends State<SettingsScreen> {
                     width: double.infinity,
                     child: TextButton.icon(
                       onPressed: () {},
-                      icon: Icon(Icons.person),
-                      label: Text("Change Password"),
+                      icon: Icon(
+                        Icons.person,
+                        size: 26,
+                      ),
+                      label: Text(
+                        "Change Password",
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
                       style: TextButton.styleFrom(
                           padding: EdgeInsets.all(15),
                           shape: RoundedRectangleBorder(
@@ -108,8 +116,14 @@ class _SettingsScreen extends State<SettingsScreen> {
                     width: double.infinity,
                     child: TextButton.icon(
                       onPressed: () {},
-                      icon: Icon(Icons.mail),
-                      label: Text("Notifications"),
+                      icon: Icon(
+                        Icons.mail,
+                        size: 26,
+                      ),
+                      label: Text(
+                        "Notifications",
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
                       style: TextButton.styleFrom(
                           padding: EdgeInsets.all(15),
                           shape: RoundedRectangleBorder(
@@ -123,8 +137,14 @@ class _SettingsScreen extends State<SettingsScreen> {
                     width: double.infinity,
                     child: TextButton.icon(
                       onPressed: () {},
-                      icon: Icon(Icons.lock),
-                      label: Text("Privacy and Security"),
+                      icon: Icon(
+                        Icons.lock,
+                        size: 26,
+                      ),
+                      label: Text(
+                        "Privacy and Security",
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
                       style: TextButton.styleFrom(
                           padding: EdgeInsets.all(15),
                           shape: RoundedRectangleBorder(
