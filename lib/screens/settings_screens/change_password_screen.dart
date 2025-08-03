@@ -1,5 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ChangePassword extends StatefulWidget {
   const ChangePassword({super.key});
@@ -20,6 +20,69 @@ class _ChangePassword extends State<ChangePassword> {
     _newPassController.dispose();
     _confirmPassController.dispose();
     super.dispose();
+  }
+
+  //--- Handle Saving New Password ---
+  Future<void> updatePassword() async {
+    //-- Variables --
+    final user = FirebaseAuth.instance.currentUser;
+    final oldPass = _currentPassController.text;
+    final newPass = _newPassController.text;
+    final confirmPass = _confirmPassController.text;
+
+    //-- Password Verification --
+    if (newPass != confirmPass) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("Passwords do not match."),
+        ),
+      );
+      return;
+    }
+
+    //-- Check user exists --
+    if (user == null || user.email == null) {
+      print("User not found.");
+      return;
+    }
+
+    try {
+      //-- Reauthenticate user --
+      final credential =
+          EmailAuthProvider.credential(email: user.email!, password: oldPass);
+      await user.reauthenticateWithCredential(credential);
+
+      //-- Update password --
+      await user.updatePassword(newPass);
+      Navigator.pop(context);
+    }
+    //-- Error Checking --
+    on FirebaseAuthException catch (e) {
+      //- Weak Password -
+      if (e.code == 'weak-password') {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("The password provided is too weak."),
+          ),
+        );
+      }
+      //- Wrong Password -
+      else if (e.code == 'wrong-password') {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("The password is incorrect."),
+          ),
+        );
+      }
+      //- Other Errors -
+      else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text("Something went wrong. Please try again."),
+          ),
+        );
+      }
+    }
   }
 
   @override
@@ -111,7 +174,7 @@ class _ChangePassword extends State<ChangePassword> {
                 //-- Save button --
                 Center(
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: updatePassword,
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
                         horizontal: 30,
