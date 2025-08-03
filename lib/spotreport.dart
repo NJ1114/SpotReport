@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotreport/screens/settings_screens/settings_screen.dart';
+import 'package:spotreport/screens/settings_screens/settings.dart';
 import 'package:spotreport/widgets/navigation_bar.dart';
 
 class SpotReport extends StatefulWidget {
