@@ -285,10 +285,8 @@ class LogoutWidget extends StatelessWidget {
             handleLogout(context);
           },
           style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
             backgroundColor: Theme.of(context).colorScheme.error,
+            padding: EdgeInsets.symmetric(horizontal: 35, vertical: 12,),
           ),
           child: Text(
             "Logout",

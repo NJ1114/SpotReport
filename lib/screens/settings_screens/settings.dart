@@ -163,7 +163,7 @@ class _SettingsScreen extends State<SettingsScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 40,
+                    height: 60,
                   ),
                   //-- Logout button --
                   Center(
