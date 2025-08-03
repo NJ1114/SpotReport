@@ -8,6 +8,19 @@ class ChangePassword extends StatefulWidget {
 }
 
 class _ChangePassword extends State<ChangePassword> {
+  //--- Controllers ---
+  final _currentPassController = TextEditingController();
+  final _newPassController = TextEditingController();
+  final _confirmPassController = TextEditingController();
+
+  @override
+  void dispose() {
+    _currentPassController.dispose();
+    _newPassController.dispose();
+    _confirmPassController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
