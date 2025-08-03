@@ -59,58 +59,92 @@ class _SettingsScreen extends State<SettingsScreen> {
             ),
           ),
           //-- Settings buttons --
-          body: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 25),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                //- User Email -
-                Text(
-                  "${state.userEmail}",
-                  style: Theme.of(context).textTheme.bodyLarge,
-                  textAlign: TextAlign.center,
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 25.0,
+                  vertical: 15,
                 ),
-                // const Divider(
-                //   height: 1,
-                //   thickness: 0.5,
-                // ),
-                //- Change Password button -
-                SizedBox(
-                  width: double.infinity,
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.all(15),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
+                child: Text(
+                  "Settings",
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  //- User Email -
+                  ColoredBox(
+                    color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                    child: SizedBox(
+                      height: 50,
+                      child: Text("${state.userEmail}",
+                        style: Theme.of(context).textTheme.bodyLarge,
+                        textAlign: TextAlign.center,
                       ),
                     ),
-                    child: Text("Change Password"),
                   ),
-                ),
-                //- Privacy & security button
-                SizedBox(
-                  width: double.infinity,
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.all(15),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero,
-                      ),
+                  // const Divider(
+                  //   height: 50,
+                  //   thickness: 0.5,
+                  // ),
+                  // - Change Password button -
+                  SizedBox(
+                    width: double.infinity,
+                    child: TextButton.icon(
+                      onPressed: () {},
+                      icon: Icon(Icons.person),
+                      label: Text("Change Password"),
+                      style: TextButton.styleFrom(
+                          padding: EdgeInsets.all(15),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                          ),
+                          alignment: Alignment.centerLeft),
                     ),
-                    child: Text("Privacy and Security"),
                   ),
-                ),
-                SizedBox(
-                  height: 40,
-                ),
-                //- Logout button -
-                Center(
-                  child: LogoutWidget(),
-                ),
-              ],
-            ),
+                  //- Notifications
+                  SizedBox(
+                    width: double.infinity,
+                    child: TextButton.icon(
+                      onPressed: () {},
+                      icon: Icon(Icons.mail),
+                      label: Text("Notifications"),
+                      style: TextButton.styleFrom(
+                          padding: EdgeInsets.all(15),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                          ),
+                          alignment: Alignment.centerLeft),
+                    ),
+                  ),
+                  //- Privacy & security button -
+                  SizedBox(
+                    width: double.infinity,
+                    child: TextButton.icon(
+                      onPressed: () {},
+                      icon: Icon(Icons.lock),
+                      label: Text("Privacy and Security"),
+                      style: TextButton.styleFrom(
+                          padding: EdgeInsets.all(15),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.zero,
+                          ),
+                          alignment: Alignment.centerLeft),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  //- Logout button -
+                  Center(
+                    child: LogoutWidget(),
+                  ),
+                ],
+              ),
+            ],
           ),
         );
       },
