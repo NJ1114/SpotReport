@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ChangePassword extends StatefulWidget {
@@ -55,28 +56,75 @@ class _ChangePassword extends State<ChangePassword> {
         ),
       ),
       //--- Change Password Main ---
-      body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 25.0,
-          vertical: 15.0,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 25.0,
+              vertical: 15.0,
+            ),
             //-- Title --
-            Text(
+            child: Text(
               "Change Password",
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                //-- Current Password --
+                Text(
+                  "Current Password",
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                TextField(
+                  controller: _currentPassController,
+                  obscureText: true,
+                ),
 
-            //-- Current Password --
+                //-- New Password --
+                Text(
+                  "New Password",
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                TextField(
+                  controller: _newPassController,
+                  obscureText: true,
+                ),
 
+                //-- Confirm New Password --
+                Text(
+                  "Confirm New Password",
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                TextField(
+                  controller: _confirmPassController,
+                  obscureText: true,
+                ),
 
-            //-- New Password --
+                SizedBox(
+                  height: 40,
+                ),
 
-            //-- Confirm New Password --
-          ],
-        ),
+                //-- Save button --
+                Center(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 30,
+                        vertical: 10,
+                      ),
+                    ),
+                    child: Text("Save"),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
